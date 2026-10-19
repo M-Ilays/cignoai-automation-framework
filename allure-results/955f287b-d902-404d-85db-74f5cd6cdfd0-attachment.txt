@@ -1,0 +1,1 @@
+Settings marker not readable on return navigation; Deliverable view is the primary sync check.

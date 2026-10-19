@@ -1,0 +1,2283 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: dashboard\deliverable\deliverable-edits-sync.spec.ts >> Feature: Edits sync (TC-017) >> 
+        Test case: 'TC-017'
+        Description: 'Search sample deliverable → Settings changes → Executive Summary Sticky notes (before/after) → verify prior stages → finish'
+        Tags: '@regression @deliverable @sync @slow'
+      
+- Location: src\specs\dashboard\deliverable\deliverable-edits-sync.spec.ts:11:7
+
+# Error details
+
+```
+TimeoutError: locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('div').filter({ has: getByText(/^Sticky notes$/i) }).filter({ has: getByRole('button', { name: /^Update section$/i }) }).last().getByRole('button', { name: /^Update section$/i }).filter({ visible: true }).first().or(locator('[role="main"]').last().or(locator('main').last()).or(locator('div').filter({ has: getByRole('button', { name: /^Export$/i }) }).last()).filter({ has: getByText(/^Sticky notes$/i) }).or(locator('[role="main"]').last().or(locator('main').last()).or(locator('div').filter({ has: getByRole('button', { name: /^Export$/i }) }).last()).filter({ has: getByRole('button', { name: /^Update section$/i }) })).or(locator('[role="main"]').last().or(locator('main').last()).or(locator('div').filter({ has: getByRole('button', { name: /^Export$/i }) }).last()).filter({ has: getByRole('button', { name: /^Export$/i }) })).first().getByRole('button', { name: /^Update section$/i }).filter({ visible: true }).first()).or(getByRole('button', { name: /^Update section$/i }).filter({ visible: true }).last())
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - alert [ref=e2]
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - button "Cigno Cigno" [ref=e8] [cursor=pointer]:
+        - img "Cigno" [ref=e10]
+        - generic [ref=e11]: Cigno
+      - button "Create New Deliverable" [ref=e14] [cursor=pointer]:
+        - img [ref=e15]
+        - generic [ref=e16]: Create New Deliverable
+      - generic [ref=e18]:
+        - img [ref=e19]
+        - textbox "Search Clients" [ref=e22]
+      - generic [ref=e23]:
+        - generic [ref=e25]:
+          - button "Collapse SHARED WORK WITH CLIENT section" [expanded] [ref=e26] [cursor=pointer]:
+            - generic [ref=e27]: SHARED WORK WITH CLIENT
+          - button "Add item to SHARED WORK WITH CLIENT" [ref=e28] [cursor=pointer]:
+            - img [ref=e29]
+          - button "Collapse SHARED WORK WITH CLIENT section (chevron)" [ref=e30] [cursor=pointer]:
+            - img [ref=e31]
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - generic [ref=e36] [cursor=pointer]:
+              - img [ref=e38]
+              - generic [ref=e43]: automation
+              - generic [ref=e44]:
+                - button [ref=e45]:
+                  - img [ref=e46]
+                - button [ref=e48]:
+                  - img [ref=e49]
+                - button [ref=e53]:
+                  - img [ref=e54]
+            - generic [ref=e57]:
+              - generic [ref=e58]:
+                - generic [ref=e61] [cursor=pointer]:
+                  - img [ref=e62]
+                  - generic [ref=e65]: New project
+                  - generic [ref=e66]:
+                    - button [ref=e67]:
+                      - img [ref=e68]
+                    - button [ref=e70]:
+                      - img [ref=e71]
+                    - button [ref=e75]:
+                      - img [ref=e76]
+                - generic [ref=e78]:
+                  - generic [ref=e79] [cursor=pointer]:
+                    - generic [ref=e81]: New deliverable
+                    - button [ref=e83]:
+                      - img [ref=e84]
+                  - generic [ref=e88] [cursor=pointer]:
+                    - generic [ref=e90]: sample deliverable
+                    - button [ref=e92]:
+                      - img [ref=e93]
+              - generic [ref=e100] [cursor=pointer]:
+                - img [ref=e101]
+                - generic [ref=e104]: Project Intake
+                - generic [ref=e105]:
+                  - button [ref=e106]:
+                    - img [ref=e107]
+                  - button [ref=e109]:
+                    - img [ref=e110]
+          - generic [ref=e114]:
+            - generic [ref=e115] [cursor=pointer]:
+              - img [ref=e117]
+              - generic [ref=e122]: Automation
+              - generic [ref=e123]:
+                - button [ref=e124]:
+                  - img [ref=e125]
+                - button [ref=e127]:
+                  - img [ref=e128]
+                - button [ref=e132]:
+                  - img [ref=e133]
+            - generic [ref=e140] [cursor=pointer]:
+              - img [ref=e141]
+              - generic [ref=e144]: Project Intake
+              - generic [ref=e145]:
+                - button [ref=e146]:
+                  - img [ref=e147]
+                - button [ref=e149]:
+                  - img [ref=e150]
+          - generic [ref=e155] [cursor=pointer]:
+            - img [ref=e157]
+            - generic [ref=e162]: Automation
+            - generic [ref=e163]:
+              - button [ref=e164]:
+                - img [ref=e165]
+              - button [ref=e167]:
+                - img [ref=e168]
+          - generic [ref=e173] [cursor=pointer]:
+            - img [ref=e175]
+            - generic [ref=e180]: Automation
+            - generic [ref=e181]:
+              - button [ref=e182]:
+                - img [ref=e183]
+              - button [ref=e185]:
+                - img [ref=e186]
+          - generic [ref=e191] [cursor=pointer]:
+            - img [ref=e193]
+            - generic [ref=e198]: Automation
+            - generic [ref=e199]:
+              - button [ref=e200]:
+                - img [ref=e201]
+              - button [ref=e203]:
+                - img [ref=e204]
+          - generic [ref=e209] [cursor=pointer]:
+            - img [ref=e211]
+            - generic [ref=e216]: Automation
+            - generic [ref=e217]:
+              - button [ref=e218]:
+                - img [ref=e219]
+              - button [ref=e221]:
+                - img [ref=e222]
+          - generic [ref=e226]:
+            - generic [ref=e227] [cursor=pointer]:
+              - img [ref=e229]
+              - generic [ref=e234]: Automation
+              - generic [ref=e235]:
+                - button [ref=e236]:
+                  - img [ref=e237]
+                - button [ref=e239]:
+                  - img [ref=e240]
+                - button [ref=e244]:
+                  - img [ref=e245]
+            - generic [ref=e249]:
+              - generic [ref=e252] [cursor=pointer]:
+                - img [ref=e253]
+                - generic [ref=e256]: New project
+                - generic [ref=e257]:
+                  - button [ref=e258]:
+                    - img [ref=e259]
+                  - button [ref=e261]:
+                    - img [ref=e262]
+                  - button [ref=e266]:
+                    - img [ref=e267]
+              - generic [ref=e270] [cursor=pointer]:
+                - generic [ref=e272]: New deliverable
+                - button [ref=e274]:
+                  - img [ref=e275]
+          - generic [ref=e280] [cursor=pointer]:
+            - img [ref=e282]
+            - generic [ref=e287]: Automation
+            - generic [ref=e288]:
+              - button [ref=e289]:
+                - img [ref=e290]
+              - button [ref=e292]:
+                - img [ref=e293]
+          - generic [ref=e298] [cursor=pointer]:
+            - img [ref=e300]
+            - generic [ref=e305]: Automation
+            - generic [ref=e306]:
+              - button [ref=e307]:
+                - img [ref=e308]
+              - button [ref=e310]:
+                - img [ref=e311]
+          - generic [ref=e316] [cursor=pointer]:
+            - img [ref=e318]
+            - generic [ref=e323]: Automation
+            - generic [ref=e324]:
+              - button [ref=e325]:
+                - img [ref=e326]
+              - button [ref=e328]:
+                - img [ref=e329]
+          - generic [ref=e334] [cursor=pointer]:
+            - img [ref=e336]
+            - generic [ref=e341]: Automation
+            - generic [ref=e342]:
+              - button [ref=e343]:
+                - img [ref=e344]
+              - button [ref=e346]:
+                - img [ref=e347]
+          - generic [ref=e352] [cursor=pointer]:
+            - img [ref=e354]
+            - generic [ref=e359]: Automation
+            - generic [ref=e360]:
+              - button [ref=e361]:
+                - img [ref=e362]
+              - button [ref=e364]:
+                - img [ref=e365]
+          - generic [ref=e369]:
+            - generic [ref=e370] [cursor=pointer]:
+              - img [ref=e372]
+              - generic [ref=e377]: Automation
+              - generic [ref=e378]:
+                - button [ref=e379]:
+                  - img [ref=e380]
+                - button [ref=e382]:
+                  - img [ref=e383]
+                - button [ref=e387]:
+                  - img [ref=e388]
+            - generic [ref=e392]:
+              - generic [ref=e395] [cursor=pointer]:
+                - img [ref=e396]
+                - generic [ref=e399]: New project
+                - generic [ref=e400]:
+                  - button [ref=e401]:
+                    - img [ref=e402]
+                  - button [ref=e404]:
+                    - img [ref=e405]
+                  - button [ref=e409]:
+                    - img [ref=e410]
+              - generic [ref=e413] [cursor=pointer]:
+                - generic [ref=e415]: New deliverable
+                - button [ref=e417]:
+                  - img [ref=e418]
+          - generic [ref=e422]:
+            - generic [ref=e423] [cursor=pointer]:
+              - img [ref=e425]
+              - generic [ref=e430]: Automation
+              - generic [ref=e431]:
+                - button [ref=e432]:
+                  - img [ref=e433]
+                - button [ref=e435]:
+                  - img [ref=e436]
+                - button [ref=e440]:
+                  - img [ref=e441]
+            - generic [ref=e445]:
+              - generic [ref=e448] [cursor=pointer]:
+                - img [ref=e449]
+                - generic [ref=e452]: New project
+                - generic [ref=e453]:
+                  - button [ref=e454]:
+                    - img [ref=e455]
+                  - button [ref=e457]:
+                    - img [ref=e458]
+                  - button [ref=e462]:
+                    - img [ref=e463]
+              - generic [ref=e466] [cursor=pointer]:
+                - generic [ref=e468]: New deliverable
+                - button [ref=e470]:
+                  - img [ref=e471]
+          - generic [ref=e475]:
+            - generic [ref=e476] [cursor=pointer]:
+              - img [ref=e478]
+              - generic [ref=e483]: Automation
+              - generic [ref=e484]:
+                - button [ref=e485]:
+                  - img [ref=e486]
+                - button [ref=e488]:
+                  - img [ref=e489]
+                - button [ref=e493]:
+                  - img [ref=e494]
+            - generic [ref=e498]:
+              - generic [ref=e501] [cursor=pointer]:
+                - img [ref=e502]
+                - generic [ref=e505]: New project
+                - generic [ref=e506]:
+                  - button [ref=e507]:
+                    - img [ref=e508]
+                  - button [ref=e510]:
+                    - img [ref=e511]
+                  - button [ref=e515]:
+                    - img [ref=e516]
+              - generic [ref=e518]:
+                - generic [ref=e519] [cursor=pointer]:
+                  - generic [ref=e521]: New deliverable
+                  - button [ref=e523]:
+                    - img [ref=e524]
+                - generic [ref=e528] [cursor=pointer]:
+                  - generic [ref=e530]: TC019 Del rJyq62THqn
+                  - button [ref=e532]:
+                    - img [ref=e533]
+          - generic [ref=e537]:
+            - generic [ref=e538] [cursor=pointer]:
+              - img [ref=e540]
+              - generic [ref=e545]: Automation
+              - generic [ref=e546]:
+                - button [ref=e547]:
+                  - img [ref=e548]
+                - button [ref=e550]:
+                  - img [ref=e551]
+                - button [ref=e555]:
+                  - img [ref=e556]
+            - generic [ref=e560]:
+              - generic [ref=e563] [cursor=pointer]:
+                - img [ref=e564]
+                - generic [ref=e567]: New project
+                - generic [ref=e568]:
+                  - button [ref=e569]:
+                    - img [ref=e570]
+                  - button [ref=e572]:
+                    - img [ref=e573]
+                  - button [ref=e577]:
+                    - img [ref=e578]
+              - generic [ref=e581] [cursor=pointer]:
+                - generic [ref=e583]: New deliverable
+                - button [ref=e585]:
+                  - img [ref=e586]
+          - generic [ref=e590]:
+            - generic [ref=e591] [cursor=pointer]:
+              - img [ref=e593]
+              - generic [ref=e598]: Automation
+              - generic [ref=e599]:
+                - button [ref=e600]:
+                  - img [ref=e601]
+                - button [ref=e603]:
+                  - img [ref=e604]
+                - button [ref=e608]:
+                  - img [ref=e609]
+            - generic [ref=e613]:
+              - generic [ref=e616] [cursor=pointer]:
+                - img [ref=e617]
+                - generic [ref=e620]: New project
+                - generic [ref=e621]:
+                  - button [ref=e622]:
+                    - img [ref=e623]
+                  - button [ref=e625]:
+                    - img [ref=e626]
+                  - button [ref=e630]:
+                    - img [ref=e631]
+              - generic [ref=e634] [cursor=pointer]:
+                - generic [ref=e636]: New deliverable
+                - button [ref=e638]:
+                  - img [ref=e639]
+          - generic [ref=e643]:
+            - generic [ref=e644] [cursor=pointer]:
+              - img [ref=e646]
+              - generic [ref=e651]: Automation
+              - generic [ref=e652]:
+                - button [ref=e653]:
+                  - img [ref=e654]
+                - button [ref=e656]:
+                  - img [ref=e657]
+                - button [ref=e661]:
+                  - img [ref=e662]
+            - generic [ref=e666]:
+              - generic [ref=e669] [cursor=pointer]:
+                - img [ref=e670]
+                - generic [ref=e673]: New project
+                - generic [ref=e674]:
+                  - button [ref=e675]:
+                    - img [ref=e676]
+                  - button [ref=e678]:
+                    - img [ref=e679]
+                  - button [ref=e683]:
+                    - img [ref=e684]
+              - generic [ref=e687] [cursor=pointer]:
+                - generic [ref=e689]: New deliverable
+                - button [ref=e691]:
+                  - img [ref=e692]
+          - generic [ref=e696]:
+            - generic [ref=e697] [cursor=pointer]:
+              - img [ref=e699]
+              - generic [ref=e704]: Automation
+              - generic [ref=e705]:
+                - button [ref=e706]:
+                  - img [ref=e707]
+                - button [ref=e709]:
+                  - img [ref=e710]
+                - button [ref=e714]:
+                  - img [ref=e715]
+            - generic [ref=e719]:
+              - generic [ref=e722] [cursor=pointer]:
+                - img [ref=e723]
+                - generic [ref=e726]: New project
+                - generic [ref=e727]:
+                  - button [ref=e728]:
+                    - img [ref=e729]
+                  - button [ref=e731]:
+                    - img [ref=e732]
+                  - button [ref=e736]:
+                    - img [ref=e737]
+              - generic [ref=e740] [cursor=pointer]:
+                - generic [ref=e742]: New deliverable
+                - button [ref=e744]:
+                  - img [ref=e745]
+          - generic [ref=e749]:
+            - generic [ref=e750] [cursor=pointer]:
+              - img [ref=e752]
+              - generic [ref=e757]: Automation
+              - generic [ref=e758]:
+                - button [ref=e759]:
+                  - img [ref=e760]
+                - button [ref=e762]:
+                  - img [ref=e763]
+                - button [ref=e767]:
+                  - img [ref=e768]
+            - generic [ref=e772]:
+              - generic [ref=e775] [cursor=pointer]:
+                - img [ref=e776]
+                - generic [ref=e779]: New project
+                - generic [ref=e780]:
+                  - button [ref=e781]:
+                    - img [ref=e782]
+                  - button [ref=e784]:
+                    - img [ref=e785]
+                  - button [ref=e789]:
+                    - img [ref=e790]
+              - generic [ref=e793] [cursor=pointer]:
+                - generic [ref=e795]: New deliverable
+                - button [ref=e797]:
+                  - img [ref=e798]
+          - generic [ref=e802]:
+            - generic [ref=e803] [cursor=pointer]:
+              - img [ref=e805]
+              - generic [ref=e810]: Automation
+              - generic [ref=e811]:
+                - button [ref=e812]:
+                  - img [ref=e813]
+                - button [ref=e815]:
+                  - img [ref=e816]
+                - button [ref=e820]:
+                  - img [ref=e821]
+            - generic [ref=e825]:
+              - generic [ref=e828] [cursor=pointer]:
+                - img [ref=e829]
+                - generic [ref=e832]: New project
+                - generic [ref=e833]:
+                  - button [ref=e834]:
+                    - img [ref=e835]
+                  - button [ref=e837]:
+                    - img [ref=e838]
+                  - button [ref=e842]:
+                    - img [ref=e843]
+              - generic [ref=e846] [cursor=pointer]:
+                - generic [ref=e848]: New deliverable
+                - button [ref=e850]:
+                  - img [ref=e851]
+          - generic [ref=e855]:
+            - generic [ref=e856] [cursor=pointer]:
+              - img [ref=e858]
+              - generic [ref=e863]: Automation
+              - generic [ref=e864]:
+                - button [ref=e865]:
+                  - img [ref=e866]
+                - button [ref=e868]:
+                  - img [ref=e869]
+                - button [ref=e873]:
+                  - img [ref=e874]
+            - generic [ref=e878]:
+              - generic [ref=e881] [cursor=pointer]:
+                - img [ref=e882]
+                - generic [ref=e885]: New project
+                - generic [ref=e886]:
+                  - button [ref=e887]:
+                    - img [ref=e888]
+                  - button [ref=e890]:
+                    - img [ref=e891]
+                  - button [ref=e895]:
+                    - img [ref=e896]
+              - generic [ref=e899] [cursor=pointer]:
+                - generic [ref=e901]: New deliverable
+                - button [ref=e903]:
+                  - img [ref=e904]
+          - generic [ref=e908]:
+            - generic [ref=e909] [cursor=pointer]:
+              - img [ref=e911]
+              - generic [ref=e916]: Automation
+              - generic [ref=e917]:
+                - button [ref=e918]:
+                  - img [ref=e919]
+                - button [ref=e921]:
+                  - img [ref=e922]
+                - button [ref=e926]:
+                  - img [ref=e927]
+            - generic [ref=e931]:
+              - generic [ref=e934] [cursor=pointer]:
+                - img [ref=e935]
+                - generic [ref=e938]: New project
+                - generic [ref=e939]:
+                  - button [ref=e940]:
+                    - img [ref=e941]
+                  - button [ref=e943]:
+                    - img [ref=e944]
+                  - button [ref=e948]:
+                    - img [ref=e949]
+              - generic [ref=e952] [cursor=pointer]:
+                - generic [ref=e954]: New deliverable
+                - button [ref=e956]:
+                  - img [ref=e957]
+          - generic [ref=e961]:
+            - generic [ref=e962] [cursor=pointer]:
+              - img [ref=e964]
+              - generic [ref=e969]: Automation
+              - generic [ref=e970]:
+                - button [ref=e971]:
+                  - img [ref=e972]
+                - button [ref=e974]:
+                  - img [ref=e975]
+                - button [ref=e979]:
+                  - img [ref=e980]
+            - generic [ref=e984]:
+              - generic [ref=e987] [cursor=pointer]:
+                - img [ref=e988]
+                - generic [ref=e991]: New project
+                - generic [ref=e992]:
+                  - button [ref=e993]:
+                    - img [ref=e994]
+                  - button [ref=e996]:
+                    - img [ref=e997]
+                  - button [ref=e1001]:
+                    - img [ref=e1002]
+              - generic [ref=e1005] [cursor=pointer]:
+                - generic [ref=e1007]: New deliverable
+                - button [ref=e1009]:
+                  - img [ref=e1010]
+          - generic [ref=e1014]:
+            - generic [ref=e1015] [cursor=pointer]:
+              - img [ref=e1017]
+              - generic [ref=e1022]: AXA
+              - generic [ref=e1023]:
+                - button [ref=e1024]:
+                  - img [ref=e1025]
+                - button [ref=e1027]:
+                  - img [ref=e1028]
+                - button [ref=e1032]:
+                  - img [ref=e1033]
+            - generic [ref=e1040] [cursor=pointer]:
+              - img [ref=e1041]
+              - generic [ref=e1044]: Automation
+              - generic [ref=e1045]:
+                - button [ref=e1046]:
+                  - img [ref=e1047]
+                - button [ref=e1049]:
+                  - img [ref=e1050]
+          - generic [ref=e1054]:
+            - generic [ref=e1055] [cursor=pointer]:
+              - img "BNP Paribas" [ref=e1057]
+              - generic [ref=e1059]: BNP Paribas
+              - generic [ref=e1060]:
+                - button [ref=e1061]:
+                  - img [ref=e1062]
+                - button [ref=e1064]:
+                  - img [ref=e1065]
+                - button [ref=e1069]:
+                  - img [ref=e1070]
+            - generic [ref=e1074]:
+              - generic [ref=e1077] [cursor=pointer]:
+                - img [ref=e1078]
+                - generic [ref=e1081]: New project
+                - generic [ref=e1082]:
+                  - button [ref=e1083]:
+                    - img [ref=e1084]
+                  - button [ref=e1086]:
+                    - img [ref=e1087]
+                  - button [ref=e1091]:
+                    - img [ref=e1092]
+              - generic [ref=e1094]:
+                - generic [ref=e1095] [cursor=pointer]:
+                  - generic [ref=e1097]: New deliverable
+                  - button [ref=e1099]:
+                    - img [ref=e1100]
+                - generic [ref=e1104] [cursor=pointer]:
+                  - generic [ref=e1106]: New deliverable
+                  - button [ref=e1108]:
+                    - img [ref=e1109]
+          - generic [ref=e1113]:
+            - generic [ref=e1114] [cursor=pointer]:
+              - img [ref=e1116]
+              - generic [ref=e1121]: BNP Paribas Corporate & Institutional Banking (CIB) Switzerland
+              - generic [ref=e1122]:
+                - button [ref=e1123]:
+                  - img [ref=e1124]
+                - button [ref=e1126]:
+                  - img [ref=e1127]
+                - button [ref=e1131]:
+                  - img [ref=e1132]
+            - generic [ref=e1136]:
+              - generic [ref=e1139] [cursor=pointer]:
+                - img [ref=e1140]
+                - generic [ref=e1143]: Fixed Income Strategy for BNP Paribas CIB Switzerland
+                - generic [ref=e1144]:
+                  - button [ref=e1145]:
+                    - img [ref=e1146]
+                  - button [ref=e1148]:
+                    - img [ref=e1149]
+                  - button [ref=e1153]:
+                    - img [ref=e1154]
+              - generic [ref=e1157] [cursor=pointer]:
+                - generic [ref=e1159]: Strategic Assessment and Roadmap for Fixed Income Franchise
+                - button [ref=e1161]:
+                  - img [ref=e1162]
+          - generic [ref=e1166]:
+            - generic [ref=e1167] [cursor=pointer]:
+              - img [ref=e1169]
+              - generic [ref=e1174]: CACIB
+              - generic [ref=e1175]:
+                - button [ref=e1176]:
+                  - img [ref=e1177]
+                - button [ref=e1179]:
+                  - img [ref=e1180]
+                - button [ref=e1184]:
+                  - img [ref=e1185]
+            - generic [ref=e1189]:
+              - generic [ref=e1192] [cursor=pointer]:
+                - img [ref=e1193]
+                - generic [ref=e1196]: New project
+                - generic [ref=e1197]:
+                  - button [ref=e1198]:
+                    - img [ref=e1199]
+                  - button [ref=e1201]:
+                    - img [ref=e1202]
+                  - button [ref=e1206]:
+                    - img [ref=e1207]
+              - generic [ref=e1210] [cursor=pointer]:
+                - generic [ref=e1212]: New deliverable
+                - button [ref=e1214]:
+                  - img [ref=e1215]
+          - generic [ref=e1219]:
+            - generic [ref=e1220] [cursor=pointer]:
+              - img [ref=e1222]
+              - generic [ref=e1227]: Client Name
+              - generic [ref=e1228]:
+                - button [ref=e1229]:
+                  - img [ref=e1230]
+                - button [ref=e1232]:
+                  - img [ref=e1233]
+                - button [ref=e1237]:
+                  - img [ref=e1238]
+            - generic [ref=e1242]:
+              - generic [ref=e1245] [cursor=pointer]:
+                - img [ref=e1246]
+                - generic [ref=e1249]: New project
+                - generic [ref=e1250]:
+                  - button [ref=e1251]:
+                    - img [ref=e1252]
+                  - button [ref=e1254]:
+                    - img [ref=e1255]
+                  - button [ref=e1259]:
+                    - img [ref=e1260]
+              - generic [ref=e1263] [cursor=pointer]:
+                - generic [ref=e1265]: New deliverable
+                - button [ref=e1267]:
+                  - img [ref=e1268]
+          - generic [ref=e1272]:
+            - generic [ref=e1273] [cursor=pointer]:
+              - img [ref=e1275]
+              - generic [ref=e1280]: Eastnets
+              - generic [ref=e1281]:
+                - button [ref=e1282]:
+                  - img [ref=e1283]
+                - button [ref=e1285]:
+                  - img [ref=e1286]
+                - button [ref=e1290]:
+                  - img [ref=e1291]
+            - generic [ref=e1295]:
+              - generic [ref=e1298] [cursor=pointer]:
+                - img [ref=e1299]
+                - generic [ref=e1302]: Europe expansion
+                - generic [ref=e1303]:
+                  - button [ref=e1304]:
+                    - img [ref=e1305]
+                  - button [ref=e1307]:
+                    - img [ref=e1308]
+                  - button [ref=e1312]:
+                    - img [ref=e1313]
+              - generic [ref=e1316] [cursor=pointer]:
+                - generic [ref=e1318]: Product strategy reco
+                - button [ref=e1320]:
+                  - img [ref=e1321]
+          - generic [ref=e1325]:
+            - generic [ref=e1326] [cursor=pointer]:
+              - img "Euronext" [ref=e1328]
+              - generic [ref=e1330]: Euronext
+              - generic [ref=e1331]:
+                - button [ref=e1332]:
+                  - img [ref=e1333]
+                - button [ref=e1335]:
+                  - img [ref=e1336]
+                - button [ref=e1340]:
+                  - img [ref=e1341]
+            - generic [ref=e1345]:
+              - generic [ref=e1348] [cursor=pointer]:
+                - img [ref=e1349]
+                - generic [ref=e1352]: New project
+                - generic [ref=e1353]:
+                  - button [ref=e1354]:
+                    - img [ref=e1355]
+                  - button [ref=e1357]:
+                    - img [ref=e1358]
+                  - button [ref=e1362]:
+                    - img [ref=e1363]
+              - generic [ref=e1366] [cursor=pointer]:
+                - generic [ref=e1368]: New deliverable
+                - button [ref=e1370]:
+                  - img [ref=e1371]
+          - generic [ref=e1375]:
+            - generic [ref=e1376] [cursor=pointer]:
+              - img [ref=e1378]
+              - generic [ref=e1383]: Goldman Sachs
+              - generic [ref=e1384]:
+                - button [ref=e1385]:
+                  - img [ref=e1386]
+                - button [ref=e1388]:
+                  - img [ref=e1389]
+                - button [ref=e1393]:
+                  - img [ref=e1394]
+            - generic [ref=e1398]:
+              - generic [ref=e1401] [cursor=pointer]:
+                - img [ref=e1402]
+                - generic [ref=e1405]: New project
+                - generic [ref=e1406]:
+                  - button [ref=e1407]:
+                    - img [ref=e1408]
+                  - button [ref=e1410]:
+                    - img [ref=e1411]
+                  - button [ref=e1415]:
+                    - img [ref=e1416]
+              - generic [ref=e1419] [cursor=pointer]:
+                - generic [ref=e1421]: New deliverable
+                - button [ref=e1423]:
+                  - img [ref=e1424]
+          - generic [ref=e1428]:
+            - generic [ref=e1429] [cursor=pointer]:
+              - img [ref=e1431]
+              - generic [ref=e1436]: Hassan Ahmad
+              - generic [ref=e1437]:
+                - button [ref=e1438]:
+                  - img [ref=e1439]
+                - button [ref=e1441]:
+                  - img [ref=e1442]
+                - button [ref=e1446]:
+                  - img [ref=e1447]
+            - generic [ref=e1451]:
+              - generic [ref=e1454] [cursor=pointer]:
+                - img [ref=e1455]
+                - generic [ref=e1458]: Cigno Automation Testing
+                - generic [ref=e1459]:
+                  - button [ref=e1460]:
+                    - img [ref=e1461]
+                  - button [ref=e1463]:
+                    - img [ref=e1464]
+                  - button [ref=e1468]:
+                    - img [ref=e1469]
+              - generic [ref=e1472] [cursor=pointer]:
+                - generic [ref=e1474]: New deliverable
+                - button [ref=e1476]:
+                  - img [ref=e1477]
+          - generic [ref=e1482] [cursor=pointer]:
+            - img "JP morgan" [ref=e1484]
+            - generic [ref=e1486]: JP morgan
+            - generic [ref=e1487]:
+              - button [ref=e1488]:
+                - img [ref=e1489]
+              - button [ref=e1491]:
+                - img [ref=e1492]
+          - generic [ref=e1496]:
+            - generic [ref=e1497] [cursor=pointer]:
+              - img "QA Automation Test Cigno" [ref=e1499]
+              - generic [ref=e1501]: QA Automation Test Cigno
+              - generic [ref=e1502]:
+                - button [ref=e1503]:
+                  - img [ref=e1504]
+                - button [ref=e1506]:
+                  - img [ref=e1507]
+                - button [ref=e1511]:
+                  - img [ref=e1512]
+            - generic [ref=e1515]:
+              - generic [ref=e1519] [cursor=pointer]:
+                - img [ref=e1520]
+                - generic [ref=e1523]: Test Cigno
+                - generic [ref=e1524]:
+                  - button [ref=e1525]:
+                    - img [ref=e1526]
+                  - button [ref=e1528]:
+                    - img [ref=e1529]
+              - generic [ref=e1536] [cursor=pointer]:
+                - img [ref=e1537]
+                - generic [ref=e1540]: Test Cigno
+                - generic [ref=e1541]:
+                  - button [ref=e1542]:
+                    - img [ref=e1543]
+                  - button [ref=e1545]:
+                    - img [ref=e1546]
+              - generic [ref=e1553] [cursor=pointer]:
+                - img [ref=e1554]
+                - generic [ref=e1557]: Test Cigno
+                - generic [ref=e1558]:
+                  - button [ref=e1559]:
+                    - img [ref=e1560]
+                  - button [ref=e1562]:
+                    - img [ref=e1563]
+              - generic [ref=e1570] [cursor=pointer]:
+                - img [ref=e1571]
+                - generic [ref=e1574]: Test Cigno
+                - generic [ref=e1575]:
+                  - button [ref=e1576]:
+                    - img [ref=e1577]
+                  - button [ref=e1579]:
+                    - img [ref=e1580]
+              - generic [ref=e1587] [cursor=pointer]:
+                - img [ref=e1588]
+                - generic [ref=e1591]: Test Cigno
+                - generic [ref=e1592]:
+                  - button [ref=e1593]:
+                    - img [ref=e1594]
+                  - button [ref=e1596]:
+                    - img [ref=e1597]
+              - generic [ref=e1604] [cursor=pointer]:
+                - img [ref=e1605]
+                - generic [ref=e1608]: Test Cigno
+                - generic [ref=e1609]:
+                  - button [ref=e1610]:
+                    - img [ref=e1611]
+                  - button [ref=e1613]:
+                    - img [ref=e1614]
+              - generic [ref=e1621] [cursor=pointer]:
+                - img [ref=e1622]
+                - generic [ref=e1625]: Test Cigno
+                - generic [ref=e1626]:
+                  - button [ref=e1627]:
+                    - img [ref=e1628]
+                  - button [ref=e1630]:
+                    - img [ref=e1631]
+              - generic [ref=e1638] [cursor=pointer]:
+                - img [ref=e1639]
+                - generic [ref=e1642]: Test Cigno
+                - generic [ref=e1643]:
+                  - button [ref=e1644]:
+                    - img [ref=e1645]
+                  - button [ref=e1647]:
+                    - img [ref=e1648]
+              - generic [ref=e1655] [cursor=pointer]:
+                - img [ref=e1656]
+                - generic [ref=e1659]: Test Cigno
+                - generic [ref=e1660]:
+                  - button [ref=e1661]:
+                    - img [ref=e1662]
+                  - button [ref=e1664]:
+                    - img [ref=e1665]
+              - generic [ref=e1672] [cursor=pointer]:
+                - img [ref=e1673]
+                - generic [ref=e1676]: Test Cigno
+                - generic [ref=e1677]:
+                  - button [ref=e1678]:
+                    - img [ref=e1679]
+                  - button [ref=e1681]:
+                    - img [ref=e1682]
+              - generic [ref=e1689] [cursor=pointer]:
+                - img [ref=e1690]
+                - generic [ref=e1693]: Test Cigno
+                - generic [ref=e1694]:
+                  - button [ref=e1695]:
+                    - img [ref=e1696]
+                  - button [ref=e1698]:
+                    - img [ref=e1699]
+              - generic [ref=e1706] [cursor=pointer]:
+                - img [ref=e1707]
+                - generic [ref=e1710]: Test Cigno
+                - generic [ref=e1711]:
+                  - button [ref=e1712]:
+                    - img [ref=e1713]
+                  - button [ref=e1715]:
+                    - img [ref=e1716]
+              - generic [ref=e1723] [cursor=pointer]:
+                - img [ref=e1724]
+                - generic [ref=e1727]: Test Cigno
+                - generic [ref=e1728]:
+                  - button [ref=e1729]:
+                    - img [ref=e1730]
+                  - button [ref=e1732]:
+                    - img [ref=e1733]
+              - generic [ref=e1740] [cursor=pointer]:
+                - img [ref=e1741]
+                - generic [ref=e1744]: Test Cigno
+                - generic [ref=e1745]:
+                  - button [ref=e1746]:
+                    - img [ref=e1747]
+                  - button [ref=e1749]:
+                    - img [ref=e1750]
+              - generic [ref=e1757] [cursor=pointer]:
+                - img [ref=e1758]
+                - generic [ref=e1761]: Test Cigno
+                - generic [ref=e1762]:
+                  - button [ref=e1763]:
+                    - img [ref=e1764]
+                  - button [ref=e1766]:
+                    - img [ref=e1767]
+              - generic [ref=e1774] [cursor=pointer]:
+                - img [ref=e1775]
+                - generic [ref=e1778]: Test Cigno
+                - generic [ref=e1779]:
+                  - button [ref=e1780]:
+                    - img [ref=e1781]
+                  - button [ref=e1783]:
+                    - img [ref=e1784]
+              - generic [ref=e1791] [cursor=pointer]:
+                - img [ref=e1792]
+                - generic [ref=e1795]: Test Cigno
+                - generic [ref=e1796]:
+                  - button [ref=e1797]:
+                    - img [ref=e1798]
+                  - button [ref=e1800]:
+                    - img [ref=e1801]
+              - generic [ref=e1808] [cursor=pointer]:
+                - img [ref=e1809]
+                - generic [ref=e1812]: Test Cigno
+                - generic [ref=e1813]:
+                  - button [ref=e1814]:
+                    - img [ref=e1815]
+                  - button [ref=e1817]:
+                    - img [ref=e1818]
+              - generic [ref=e1825] [cursor=pointer]:
+                - img [ref=e1826]
+                - generic [ref=e1829]: Test Cigno
+                - generic [ref=e1830]:
+                  - button [ref=e1831]:
+                    - img [ref=e1832]
+                  - button [ref=e1834]:
+                    - img [ref=e1835]
+              - generic [ref=e1842] [cursor=pointer]:
+                - img [ref=e1843]
+                - generic [ref=e1846]: Test Cigno
+                - generic [ref=e1847]:
+                  - button [ref=e1848]:
+                    - img [ref=e1849]
+                  - button [ref=e1851]:
+                    - img [ref=e1852]
+              - generic [ref=e1859] [cursor=pointer]:
+                - img [ref=e1860]
+                - generic [ref=e1863]: Test Cigno
+                - generic [ref=e1864]:
+                  - button [ref=e1865]:
+                    - img [ref=e1866]
+                  - button [ref=e1868]:
+                    - img [ref=e1869]
+              - generic [ref=e1876] [cursor=pointer]:
+                - img [ref=e1877]
+                - generic [ref=e1880]: Test Cigno
+                - generic [ref=e1881]:
+                  - button [ref=e1882]:
+                    - img [ref=e1883]
+                  - button [ref=e1885]:
+                    - img [ref=e1886]
+              - generic [ref=e1893] [cursor=pointer]:
+                - img [ref=e1894]
+                - generic [ref=e1897]: Test Cigno
+                - generic [ref=e1898]:
+                  - button [ref=e1899]:
+                    - img [ref=e1900]
+                  - button [ref=e1902]:
+                    - img [ref=e1903]
+              - generic [ref=e1910] [cursor=pointer]:
+                - img [ref=e1911]
+                - generic [ref=e1914]: Test Cigno
+                - generic [ref=e1915]:
+                  - button [ref=e1916]:
+                    - img [ref=e1917]
+                  - button [ref=e1919]:
+                    - img [ref=e1920]
+              - generic [ref=e1924]:
+                - generic [ref=e1927] [cursor=pointer]:
+                  - img [ref=e1928]
+                  - generic [ref=e1931]: Testing Cigno Auto
+                  - generic [ref=e1932]:
+                    - button [ref=e1933]:
+                      - img [ref=e1934]
+                    - button [ref=e1936]:
+                      - img [ref=e1937]
+                    - button [ref=e1941]:
+                      - img [ref=e1942]
+                - generic [ref=e1945] [cursor=pointer]:
+                  - generic [ref=e1947]: Test Cigno Deliverable
+                  - button [ref=e1949]:
+                    - img [ref=e1950]
+          - generic [ref=e1955] [cursor=pointer]:
+            - img [ref=e1957]
+            - generic [ref=e1962]: QA Automation Test Cigno
+            - generic [ref=e1963]:
+              - button [ref=e1964]:
+                - img [ref=e1965]
+              - button [ref=e1967]:
+                - img [ref=e1968]
+          - generic [ref=e1973] [cursor=pointer]:
+            - img [ref=e1975]
+            - generic [ref=e1980]: QA Automation Test Cigno
+            - generic [ref=e1981]:
+              - button [ref=e1982]:
+                - img [ref=e1983]
+              - button [ref=e1985]:
+                - img [ref=e1986]
+          - generic [ref=e1991] [cursor=pointer]:
+            - img [ref=e1993]
+            - generic [ref=e1998]: QA Automation Test Cigno
+            - generic [ref=e1999]:
+              - button [ref=e2000]:
+                - img [ref=e2001]
+              - button [ref=e2003]:
+                - img [ref=e2004]
+          - generic [ref=e2009] [cursor=pointer]:
+            - img [ref=e2011]
+            - generic [ref=e2016]: QA Automation Test Cigno
+            - generic [ref=e2017]:
+              - button [ref=e2018]:
+                - img [ref=e2019]
+              - button [ref=e2021]:
+                - img [ref=e2022]
+          - generic [ref=e2027] [cursor=pointer]:
+            - img [ref=e2029]
+            - generic [ref=e2034]: QA Automation Test Cigno
+            - generic [ref=e2035]:
+              - button [ref=e2036]:
+                - img [ref=e2037]
+              - button [ref=e2039]:
+                - img [ref=e2040]
+          - generic [ref=e2045] [cursor=pointer]:
+            - img [ref=e2047]
+            - generic [ref=e2052]: QA Automation Test Cigno
+            - generic [ref=e2053]:
+              - button [ref=e2054]:
+                - img [ref=e2055]
+              - button [ref=e2057]:
+                - img [ref=e2058]
+          - generic [ref=e2063] [cursor=pointer]:
+            - img [ref=e2065]
+            - generic [ref=e2070]: QA Automation Test Cigno
+            - generic [ref=e2071]:
+              - button [ref=e2072]:
+                - img [ref=e2073]
+              - button [ref=e2075]:
+                - img [ref=e2076]
+          - generic [ref=e2081] [cursor=pointer]:
+            - img [ref=e2083]
+            - generic [ref=e2088]: QA Automation Test Cigno
+            - generic [ref=e2089]:
+              - button [ref=e2090]:
+                - img [ref=e2091]
+              - button [ref=e2093]:
+                - img [ref=e2094]
+          - generic [ref=e2099] [cursor=pointer]:
+            - img [ref=e2101]
+            - generic [ref=e2106]: QA Automation Test Cigno
+            - generic [ref=e2107]:
+              - button [ref=e2108]:
+                - img [ref=e2109]
+              - button [ref=e2111]:
+                - img [ref=e2112]
+          - generic [ref=e2117] [cursor=pointer]:
+            - img [ref=e2119]
+            - generic [ref=e2124]: QA Automation Test Cigno
+            - generic [ref=e2125]:
+              - button [ref=e2126]:
+                - img [ref=e2127]
+              - button [ref=e2129]:
+                - img [ref=e2130]
+          - generic [ref=e2135] [cursor=pointer]:
+            - img [ref=e2137]
+            - generic [ref=e2142]: QA Automation Test Cigno
+            - generic [ref=e2143]:
+              - button [ref=e2144]:
+                - img [ref=e2145]
+              - button [ref=e2147]:
+                - img [ref=e2148]
+          - generic [ref=e2153] [cursor=pointer]:
+            - img [ref=e2155]
+            - generic [ref=e2160]: QA Automation Test Cigno
+            - generic [ref=e2161]:
+              - button [ref=e2162]:
+                - img [ref=e2163]
+              - button [ref=e2165]:
+                - img [ref=e2166]
+          - generic [ref=e2171] [cursor=pointer]:
+            - img [ref=e2173]
+            - generic [ref=e2178]: QA Automation Test Cigno
+            - generic [ref=e2179]:
+              - button [ref=e2180]:
+                - img [ref=e2181]
+              - button [ref=e2183]:
+                - img [ref=e2184]
+          - generic [ref=e2189] [cursor=pointer]:
+            - img [ref=e2191]
+            - generic [ref=e2196]: QA Automation Test Cigno
+            - generic [ref=e2197]:
+              - button [ref=e2198]:
+                - img [ref=e2199]
+              - button [ref=e2201]:
+                - img [ref=e2202]
+          - generic [ref=e2207] [cursor=pointer]:
+            - img [ref=e2209]
+            - generic [ref=e2214]: QA Automation Test Cigno
+            - generic [ref=e2215]:
+              - button [ref=e2216]:
+                - img [ref=e2217]
+              - button [ref=e2219]:
+                - img [ref=e2220]
+          - generic [ref=e2225] [cursor=pointer]:
+            - img [ref=e2227]
+            - generic [ref=e2232]: QA Automation Test Cigno
+            - generic [ref=e2233]:
+              - button [ref=e2234]:
+                - img [ref=e2235]
+              - button [ref=e2237]:
+                - img [ref=e2238]
+          - generic [ref=e2243] [cursor=pointer]:
+            - img [ref=e2245]
+            - generic [ref=e2250]: QA Automation Test Cigno
+            - generic [ref=e2251]:
+              - button [ref=e2252]:
+                - img [ref=e2253]
+              - button [ref=e2255]:
+                - img [ref=e2256]
+          - generic [ref=e2261] [cursor=pointer]:
+            - img [ref=e2263]
+            - generic [ref=e2268]: QA Automation Test Cigno
+            - generic [ref=e2269]:
+              - button [ref=e2270]:
+                - img [ref=e2271]
+              - button [ref=e2273]:
+                - img [ref=e2274]
+          - generic [ref=e2279] [cursor=pointer]:
+            - img [ref=e2281]
+            - generic [ref=e2286]: QA Automation Test Cigno
+            - generic [ref=e2287]:
+              - button [ref=e2288]:
+                - img [ref=e2289]
+              - button [ref=e2291]:
+                - img [ref=e2292]
+          - generic [ref=e2297] [cursor=pointer]:
+            - img [ref=e2299]
+            - generic [ref=e2304]: QA Automation Test Cigno
+            - generic [ref=e2305]:
+              - button [ref=e2306]:
+                - img [ref=e2307]
+              - button [ref=e2309]:
+                - img [ref=e2310]
+          - generic [ref=e2314]:
+            - generic [ref=e2315] [cursor=pointer]:
+              - img [ref=e2317]
+              - generic [ref=e2322]: QA Automation Test Cigno 3pQ2WPtapX
+              - generic [ref=e2323]:
+                - button [ref=e2324]:
+                  - img [ref=e2325]
+                - button [ref=e2327]:
+                  - img [ref=e2328]
+                - button [ref=e2332]:
+                  - img [ref=e2333]
+            - generic [ref=e2340] [cursor=pointer]:
+              - img [ref=e2341]
+              - generic [ref=e2344]: Test Cigno 3pQ2WPtapX
+              - generic [ref=e2345]:
+                - button [ref=e2346]:
+                  - img [ref=e2347]
+                - button [ref=e2349]:
+                  - img [ref=e2350]
+          - generic [ref=e2354]:
+            - generic [ref=e2355] [cursor=pointer]:
+              - img [ref=e2357]
+              - generic [ref=e2362]: QA Automation Test Cigno 4s1P2zo6kD
+              - generic [ref=e2363]:
+                - button [ref=e2364]:
+                  - img [ref=e2365]
+                - button [ref=e2367]:
+                  - img [ref=e2368]
+                - button [ref=e2372]:
+                  - img [ref=e2373]
+            - generic [ref=e2380] [cursor=pointer]:
+              - img [ref=e2381]
+              - generic [ref=e2384]: Test Cigno 4s1P2zo6kD
+              - generic [ref=e2385]:
+                - button [ref=e2386]:
+                  - img [ref=e2387]
+                - button [ref=e2389]:
+                  - img [ref=e2390]
+          - generic [ref=e2394]:
+            - generic [ref=e2395] [cursor=pointer]:
+              - img [ref=e2397]
+              - generic [ref=e2402]: QA Automation Test Cigno 6xJjb27076
+              - generic [ref=e2403]:
+                - button [ref=e2404]:
+                  - img [ref=e2405]
+                - button [ref=e2407]:
+                  - img [ref=e2408]
+                - button [ref=e2412]:
+                  - img [ref=e2413]
+            - generic [ref=e2420] [cursor=pointer]:
+              - img [ref=e2421]
+              - generic [ref=e2424]: Test Cigno 6xJjb27076
+              - generic [ref=e2425]:
+                - button [ref=e2426]:
+                  - img [ref=e2427]
+                - button [ref=e2429]:
+                  - img [ref=e2430]
+          - generic [ref=e2435] [cursor=pointer]:
+            - img [ref=e2437]
+            - generic [ref=e2442]: QA Automation Test Cigno 8l8qtkKsWG
+            - generic [ref=e2443]:
+              - button [ref=e2444]:
+                - img [ref=e2445]
+              - button [ref=e2447]:
+                - img [ref=e2448]
+          - generic [ref=e2453] [cursor=pointer]:
+            - img [ref=e2455]
+            - generic [ref=e2460]: QA Automation Test Cigno gwFSPYXsVz
+            - generic [ref=e2461]:
+              - button [ref=e2462]:
+                - img [ref=e2463]
+              - button [ref=e2465]:
+                - img [ref=e2466]
+          - generic [ref=e2471] [cursor=pointer]:
+            - img [ref=e2473]
+            - generic [ref=e2478]: QA Automation Test Cigno J0hvOaFRXB
+            - generic [ref=e2479]:
+              - button [ref=e2480]:
+                - img [ref=e2481]
+              - button [ref=e2483]:
+                - img [ref=e2484]
+          - generic [ref=e2489] [cursor=pointer]:
+            - img [ref=e2491]
+            - generic [ref=e2496]: QA Automation Test Cigno K1njI0NbC2
+            - generic [ref=e2497]:
+              - button [ref=e2498]:
+                - img [ref=e2499]
+              - button [ref=e2501]:
+                - img [ref=e2502]
+          - generic [ref=e2507] [cursor=pointer]:
+            - img [ref=e2509]
+            - generic [ref=e2514]: QA Automation Test Cigno LCNRwicBIb
+            - generic [ref=e2515]:
+              - button [ref=e2516]:
+                - img [ref=e2517]
+              - button [ref=e2519]:
+                - img [ref=e2520]
+          - generic [ref=e2524]:
+            - generic [ref=e2525] [cursor=pointer]:
+              - img [ref=e2527]
+              - generic [ref=e2532]: QA Automation Test Cigno oI7qoaytZc
+              - generic [ref=e2533]:
+                - button [ref=e2534]:
+                  - img [ref=e2535]
+                - button [ref=e2537]:
+                  - img [ref=e2538]
+                - button [ref=e2542]:
+                  - img [ref=e2543]
+            - generic [ref=e2550] [cursor=pointer]:
+              - img [ref=e2551]
+              - generic [ref=e2554]: Test Cigno oI7qoaytZc
+              - generic [ref=e2555]:
+                - button [ref=e2556]:
+                  - img [ref=e2557]
+                - button [ref=e2559]:
+                  - img [ref=e2560]
+          - generic [ref=e2565] [cursor=pointer]:
+            - img [ref=e2567]
+            - generic [ref=e2572]: QA Automation Test Cigno OxzxhGdsUy
+            - generic [ref=e2573]:
+              - button [ref=e2574]:
+                - img [ref=e2575]
+              - button [ref=e2577]:
+                - img [ref=e2578]
+          - generic [ref=e2583] [cursor=pointer]:
+            - img [ref=e2585]
+            - generic [ref=e2590]: QA Automation Test Cigno qGw16vQJ6Q
+            - generic [ref=e2591]:
+              - button [ref=e2592]:
+                - img [ref=e2593]
+              - button [ref=e2595]:
+                - img [ref=e2596]
+          - generic [ref=e2600]:
+            - generic [ref=e2601] [cursor=pointer]:
+              - img [ref=e2603]
+              - generic [ref=e2608]: QA Automation Test Cigno QySvq3ZMUM
+              - generic [ref=e2609]:
+                - button [ref=e2610]:
+                  - img [ref=e2611]
+                - button [ref=e2613]:
+                  - img [ref=e2614]
+                - button [ref=e2618]:
+                  - img [ref=e2619]
+            - generic [ref=e2626] [cursor=pointer]:
+              - img [ref=e2627]
+              - generic [ref=e2630]: Test Cigno QySvq3ZMUM
+              - generic [ref=e2631]:
+                - button [ref=e2632]:
+                  - img [ref=e2633]
+                - button [ref=e2635]:
+                  - img [ref=e2636]
+          - generic [ref=e2640]:
+            - generic [ref=e2641] [cursor=pointer]:
+              - img [ref=e2643]
+              - generic [ref=e2648]: QA Tree Client 0gNeuVJ3wl
+              - generic [ref=e2649]:
+                - button [ref=e2650]:
+                  - img [ref=e2651]
+                - button [ref=e2653]:
+                  - img [ref=e2654]
+                - button [ref=e2658]:
+                  - img [ref=e2659]
+            - generic [ref=e2666] [cursor=pointer]:
+              - img [ref=e2667]
+              - generic [ref=e2670]: TreeProj hoX11LWGLfkQ
+              - generic [ref=e2671]:
+                - button [ref=e2672]:
+                  - img [ref=e2673]
+                - button [ref=e2675]:
+                  - img [ref=e2676]
+          - generic [ref=e2680]:
+            - generic [ref=e2681] [cursor=pointer]:
+              - img [ref=e2683]
+              - generic [ref=e2688]: QA Tree Client 0RGRValVVt
+              - generic [ref=e2689]:
+                - button [ref=e2690]:
+                  - img [ref=e2691]
+                - button [ref=e2693]:
+                  - img [ref=e2694]
+                - button [ref=e2698]:
+                  - img [ref=e2699]
+            - generic [ref=e2706] [cursor=pointer]:
+              - img [ref=e2707]
+              - generic [ref=e2710]: TreeProj rqGwDOOiXSl7
+              - generic [ref=e2711]:
+                - button [ref=e2712]:
+                  - img [ref=e2713]
+                - button [ref=e2715]:
+                  - img [ref=e2716]
+          - generic [ref=e2721] [cursor=pointer]:
+            - img [ref=e2723]
+            - generic [ref=e2728]: QA Tree Client 2cW94sVCTn
+            - generic [ref=e2729]:
+              - button [ref=e2730]:
+                - img [ref=e2731]
+              - button [ref=e2733]:
+                - img [ref=e2734]
+          - generic [ref=e2738]:
+            - generic [ref=e2739] [cursor=pointer]:
+              - img [ref=e2741]
+              - generic [ref=e2746]: QA Tree Client 2qyvtJDqal
+              - generic [ref=e2747]:
+                - button [ref=e2748]:
+                  - img [ref=e2749]
+                - button [ref=e2751]:
+                  - img [ref=e2752]
+                - button [ref=e2756]:
+                  - img [ref=e2757]
+            - generic [ref=e2764] [cursor=pointer]:
+              - img [ref=e2765]
+              - generic [ref=e2768]: TreeProj TevbDUshXrpT
+              - generic [ref=e2769]:
+                - button [ref=e2770]:
+                  - img [ref=e2771]
+                - button [ref=e2773]:
+                  - img [ref=e2774]
+          - generic [ref=e2778]:
+            - generic [ref=e2779] [cursor=pointer]:
+              - img [ref=e2781]
+              - generic [ref=e2786]: QA Tree Client 9TUVnDZKwp
+              - generic [ref=e2787]:
+                - button [ref=e2788]:
+                  - img [ref=e2789]
+                - button [ref=e2791]:
+                  - img [ref=e2792]
+                - button [ref=e2796]:
+                  - img [ref=e2797]
+            - generic [ref=e2804] [cursor=pointer]:
+              - img [ref=e2805]
+              - generic [ref=e2808]: TreeProj sNm4NAE6O0ZM
+              - generic [ref=e2809]:
+                - button [ref=e2810]:
+                  - img [ref=e2811]
+                - button [ref=e2813]:
+                  - img [ref=e2814]
+          - generic [ref=e2818]:
+            - generic [ref=e2819] [cursor=pointer]:
+              - img [ref=e2821]
+              - generic [ref=e2826]: QA Tree Client 0845OvuH7m
+              - generic [ref=e2827]:
+                - button [ref=e2828]:
+                  - img [ref=e2829]
+                - button [ref=e2831]:
+                  - img [ref=e2832]
+                - button [ref=e2836]:
+                  - img [ref=e2837]
+            - generic [ref=e2844] [cursor=pointer]:
+              - img [ref=e2845]
+              - generic [ref=e2848]: TreeProj QRD30LN6Bz3y
+              - generic [ref=e2849]:
+                - button [ref=e2850]:
+                  - img [ref=e2851]
+                - button [ref=e2853]:
+                  - img [ref=e2854]
+          - generic [ref=e2858]:
+            - generic [ref=e2859] [cursor=pointer]:
+              - img [ref=e2861]
+              - generic [ref=e2866]: QA Tree Client A9lUDyePx1
+              - generic [ref=e2867]:
+                - button [ref=e2868]:
+                  - img [ref=e2869]
+                - button [ref=e2871]:
+                  - img [ref=e2872]
+                - button [ref=e2876]:
+                  - img [ref=e2877]
+            - generic [ref=e2884] [cursor=pointer]:
+              - img [ref=e2885]
+              - generic [ref=e2888]: TreeProj zfgdCfHIMFVI
+              - generic [ref=e2889]:
+                - button [ref=e2890]:
+                  - img [ref=e2891]
+                - button [ref=e2893]:
+                  - img [ref=e2894]
+          - generic [ref=e2898]:
+            - generic [ref=e2899] [cursor=pointer]:
+              - img [ref=e2901]
+              - generic [ref=e2906]: QA Tree Client aAuPkDLsUv
+              - generic [ref=e2907]:
+                - button [ref=e2908]:
+                  - img [ref=e2909]
+                - button [ref=e2911]:
+                  - img [ref=e2912]
+                - button [ref=e2916]:
+                  - img [ref=e2917]
+            - generic [ref=e2924] [cursor=pointer]:
+              - img [ref=e2925]
+              - generic [ref=e2928]: TreeProj LyBb9gmWqqER
+              - generic [ref=e2929]:
+                - button [ref=e2930]:
+                  - img [ref=e2931]
+                - button [ref=e2933]:
+                  - img [ref=e2934]
+          - generic [ref=e2938]:
+            - generic [ref=e2939] [cursor=pointer]:
+              - img [ref=e2941]
+              - generic [ref=e2946]: QA Tree Client bwIfnbUj1Z
+              - generic [ref=e2947]:
+                - button [ref=e2948]:
+                  - img [ref=e2949]
+                - button [ref=e2951]:
+                  - img [ref=e2952]
+                - button [ref=e2956]:
+                  - img [ref=e2957]
+            - generic [ref=e2964] [cursor=pointer]:
+              - img [ref=e2965]
+              - generic [ref=e2968]: TreeProj pyrSZKGArmA7
+              - generic [ref=e2969]:
+                - button [ref=e2970]:
+                  - img [ref=e2971]
+                - button [ref=e2973]:
+                  - img [ref=e2974]
+          - generic [ref=e2978]:
+            - generic [ref=e2979] [cursor=pointer]:
+              - img [ref=e2981]
+              - generic [ref=e2986]: QA Tree Client Bxpzwt0MpT
+              - generic [ref=e2987]:
+                - button [ref=e2988]:
+                  - img [ref=e2989]
+                - button [ref=e2991]:
+                  - img [ref=e2992]
+                - button [ref=e2996]:
+                  - img [ref=e2997]
+            - generic [ref=e3004] [cursor=pointer]:
+              - img [ref=e3005]
+              - generic [ref=e3008]: TreeProj 1dPAGxK0CDFL
+              - generic [ref=e3009]:
+                - button [ref=e3010]:
+                  - img [ref=e3011]
+                - button [ref=e3013]:
+                  - img [ref=e3014]
+          - generic [ref=e3018]:
+            - generic [ref=e3019] [cursor=pointer]:
+              - img [ref=e3021]
+              - generic [ref=e3026]: QA Tree Client CQyvY47RY8
+              - generic [ref=e3027]:
+                - button [ref=e3028]:
+                  - img [ref=e3029]
+                - button [ref=e3031]:
+                  - img [ref=e3032]
+                - button [ref=e3036]:
+                  - img [ref=e3037]
+            - generic [ref=e3044] [cursor=pointer]:
+              - img [ref=e3045]
+              - generic [ref=e3048]: TreeProj xICyuzsg0vd2
+              - generic [ref=e3049]:
+                - button [ref=e3050]:
+                  - img [ref=e3051]
+                - button [ref=e3053]:
+                  - img [ref=e3054]
+          - generic [ref=e3058]:
+            - generic [ref=e3059] [cursor=pointer]:
+              - img [ref=e3061]
+              - generic [ref=e3066]: QA Tree Client FIwH0NM1xz
+              - generic [ref=e3067]:
+                - button [ref=e3068]:
+                  - img [ref=e3069]
+                - button [ref=e3071]:
+                  - img [ref=e3072]
+                - button [ref=e3076]:
+                  - img [ref=e3077]
+            - generic [ref=e3084] [cursor=pointer]:
+              - img [ref=e3085]
+              - generic [ref=e3088]: TreeProj 9iCtmbYafZD5
+              - generic [ref=e3089]:
+                - button [ref=e3090]:
+                  - img [ref=e3091]
+                - button [ref=e3093]:
+                  - img [ref=e3094]
+          - generic [ref=e3098]:
+            - generic [ref=e3099] [cursor=pointer]:
+              - img [ref=e3101]
+              - generic [ref=e3106]: QA Tree Client FK29rvQ2DO
+              - generic [ref=e3107]:
+                - button [ref=e3108]:
+                  - img [ref=e3109]
+                - button [ref=e3111]:
+                  - img [ref=e3112]
+                - button [ref=e3116]:
+                  - img [ref=e3117]
+            - generic [ref=e3124] [cursor=pointer]:
+              - img [ref=e3125]
+              - generic [ref=e3128]: TreeProj C5V9l6z46oVv
+              - generic [ref=e3129]:
+                - button [ref=e3130]:
+                  - img [ref=e3131]
+                - button [ref=e3133]:
+                  - img [ref=e3134]
+          - generic [ref=e3138]:
+            - generic [ref=e3139] [cursor=pointer]:
+              - img [ref=e3141]
+              - generic [ref=e3146]: QA Tree Client fpJ6Q2vkX6
+              - generic [ref=e3147]:
+                - button [ref=e3148]:
+                  - img [ref=e3149]
+                - button [ref=e3151]:
+                  - img [ref=e3152]
+                - button [ref=e3156]:
+                  - img [ref=e3157]
+            - generic [ref=e3164] [cursor=pointer]:
+              - img [ref=e3165]
+              - generic [ref=e3168]: TreeProj lfQCIwn5WENM
+              - generic [ref=e3169]:
+                - button [ref=e3170]:
+                  - img [ref=e3171]
+                - button [ref=e3173]:
+                  - img [ref=e3174]
+          - generic [ref=e3178]:
+            - generic [ref=e3179] [cursor=pointer]:
+              - img [ref=e3181]
+              - generic [ref=e3186]: QA Tree Client gHiEWOz3Sg
+              - generic [ref=e3187]:
+                - button [ref=e3188]:
+                  - img [ref=e3189]
+                - button [ref=e3191]:
+                  - img [ref=e3192]
+                - button [ref=e3196]:
+                  - img [ref=e3197]
+            - generic [ref=e3204] [cursor=pointer]:
+              - img [ref=e3205]
+              - generic [ref=e3208]: TreeProj Q8HT0JUtriud
+              - generic [ref=e3209]:
+                - button [ref=e3210]:
+                  - img [ref=e3211]
+                - button [ref=e3213]:
+                  - img [ref=e3214]
+          - generic [ref=e3219] [cursor=pointer]:
+            - img [ref=e3221]
+            - generic [ref=e3226]: QA Tree Client hIrhkHLHef
+            - generic [ref=e3227]:
+              - button [ref=e3228]:
+                - img [ref=e3229]
+              - button [ref=e3231]:
+                - img [ref=e3232]
+          - generic [ref=e3236]:
+            - generic [ref=e3237] [cursor=pointer]:
+              - img [ref=e3239]
+              - generic [ref=e3244]: QA Tree Client hwe3RvIRnx
+              - generic [ref=e3245]:
+                - button [ref=e3246]:
+                  - img [ref=e3247]
+                - button [ref=e3249]:
+                  - img [ref=e3250]
+                - button [ref=e3254]:
+                  - img [ref=e3255]
+            - generic [ref=e3262] [cursor=pointer]:
+              - img [ref=e3263]
+              - generic [ref=e3266]: Test Cigno s88VvXQd
+              - generic [ref=e3267]:
+                - button [ref=e3268]:
+                  - img [ref=e3269]
+                - button [ref=e3271]:
+                  - img [ref=e3272]
+          - generic [ref=e3276]:
+            - generic [ref=e3277] [cursor=pointer]:
+              - img [ref=e3279]
+              - generic [ref=e3284]: QA Tree Client idiXJjEhBn
+              - generic [ref=e3285]:
+                - button [ref=e3286]:
+                  - img [ref=e3287]
+                - button [ref=e3289]:
+                  - img [ref=e3290]
+                - button [ref=e3294]:
+                  - img [ref=e3295]
+            - generic [ref=e3302] [cursor=pointer]:
+              - img [ref=e3303]
+              - generic [ref=e3306]: TreeProj Hb0ob3jE7GWC
+              - generic [ref=e3307]:
+                - button [ref=e3308]:
+                  - img [ref=e3309]
+                - button [ref=e3311]:
+                  - img [ref=e3312]
+          - generic [ref=e3316]:
+            - generic [ref=e3317] [cursor=pointer]:
+              - img [ref=e3319]
+              - generic [ref=e3324]: QA Tree Client kamQWHG7AL
+              - generic [ref=e3325]:
+                - button [ref=e3326]:
+                  - img [ref=e3327]
+                - button [ref=e3329]:
+                  - img [ref=e3330]
+                - button [ref=e3334]:
+                  - img [ref=e3335]
+            - generic [ref=e3342] [cursor=pointer]:
+              - img [ref=e3343]
+              - generic [ref=e3346]: TreeProj OyGS17lXvLaO
+              - generic [ref=e3347]:
+                - button [ref=e3348]:
+                  - img [ref=e3349]
+                - button [ref=e3351]:
+                  - img [ref=e3352]
+          - generic [ref=e3356]:
+            - generic [ref=e3357] [cursor=pointer]:
+              - img [ref=e3359]
+              - generic [ref=e3364]: QA Tree Client mFP05oVufq
+              - generic [ref=e3365]:
+                - button [ref=e3366]:
+                  - img [ref=e3367]
+                - button [ref=e3369]:
+                  - img [ref=e3370]
+                - button [ref=e3374]:
+                  - img [ref=e3375]
+            - generic [ref=e3382] [cursor=pointer]:
+              - img [ref=e3383]
+              - generic [ref=e3386]: TreeProj 7s8M9NsyA7XE
+              - generic [ref=e3387]:
+                - button [ref=e3388]:
+                  - img [ref=e3389]
+                - button [ref=e3391]:
+                  - img [ref=e3392]
+          - generic [ref=e3396]:
+            - generic [ref=e3397] [cursor=pointer]:
+              - img [ref=e3399]
+              - generic [ref=e3404]: QA Tree Client NC8oAD3MA4
+              - generic [ref=e3405]:
+                - button [ref=e3406]:
+                  - img [ref=e3407]
+                - button [ref=e3409]:
+                  - img [ref=e3410]
+                - button [ref=e3414]:
+                  - img [ref=e3415]
+            - generic [ref=e3422] [cursor=pointer]:
+              - img [ref=e3423]
+              - generic [ref=e3426]: TreeProj DxzTnW8MS2Je
+              - generic [ref=e3427]:
+                - button [ref=e3428]:
+                  - img [ref=e3429]
+                - button [ref=e3431]:
+                  - img [ref=e3432]
+          - generic [ref=e3436]:
+            - generic [ref=e3437] [cursor=pointer]:
+              - img [ref=e3439]
+              - generic [ref=e3444]: QA Tree Client RZc33bds5A
+              - generic [ref=e3445]:
+                - button [ref=e3446]:
+                  - img [ref=e3447]
+                - button [ref=e3449]:
+                  - img [ref=e3450]
+                - button [ref=e3454]:
+                  - img [ref=e3455]
+            - generic [ref=e3462] [cursor=pointer]:
+              - img [ref=e3463]
+              - generic [ref=e3466]: TreeProj MwGRtnqtPQk6
+              - generic [ref=e3467]:
+                - button [ref=e3468]:
+                  - img [ref=e3469]
+                - button [ref=e3471]:
+                  - img [ref=e3472]
+          - generic [ref=e3476]:
+            - generic [ref=e3477] [cursor=pointer]:
+              - img [ref=e3479]
+              - generic [ref=e3484]: QA Tree Client srGwggBzgN
+              - generic [ref=e3485]:
+                - button [ref=e3486]:
+                  - img [ref=e3487]
+                - button [ref=e3489]:
+                  - img [ref=e3490]
+                - button [ref=e3494]:
+                  - img [ref=e3495]
+            - generic [ref=e3502] [cursor=pointer]:
+              - img [ref=e3503]
+              - generic [ref=e3506]: TreeProj 1nKIUD82Zp67
+              - generic [ref=e3507]:
+                - button [ref=e3508]:
+                  - img [ref=e3509]
+                - button [ref=e3511]:
+                  - img [ref=e3512]
+          - generic [ref=e3516]:
+            - generic [ref=e3517] [cursor=pointer]:
+              - img [ref=e3519]
+              - generic [ref=e3524]: QA Tree Client SUHNYIaK5Q
+              - generic [ref=e3525]:
+                - button [ref=e3526]:
+                  - img [ref=e3527]
+                - button [ref=e3529]:
+                  - img [ref=e3530]
+                - button [ref=e3534]:
+                  - img [ref=e3535]
+            - generic [ref=e3542] [cursor=pointer]:
+              - img [ref=e3543]
+              - generic [ref=e3546]: TreeProj uiMtZM6AxbPx
+              - generic [ref=e3547]:
+                - button [ref=e3548]:
+                  - img [ref=e3549]
+                - button [ref=e3551]:
+                  - img [ref=e3552]
+          - generic [ref=e3556]:
+            - generic [ref=e3557] [cursor=pointer]:
+              - img [ref=e3559]
+              - generic [ref=e3564]: QA Tree Client sWI1QkS6vu
+              - generic [ref=e3565]:
+                - button [ref=e3566]:
+                  - img [ref=e3567]
+                - button [ref=e3569]:
+                  - img [ref=e3570]
+                - button [ref=e3574]:
+                  - img [ref=e3575]
+            - generic [ref=e3582] [cursor=pointer]:
+              - img [ref=e3583]
+              - generic [ref=e3586]: TreeProj 1kSsKH9b1QZE
+              - generic [ref=e3587]:
+                - button [ref=e3588]:
+                  - img [ref=e3589]
+                - button [ref=e3591]:
+                  - img [ref=e3592]
+          - generic [ref=e3596]:
+            - generic [ref=e3597] [cursor=pointer]:
+              - img [ref=e3599]
+              - generic [ref=e3604]: QA Tree Client TUyJrbhCJb
+              - generic [ref=e3605]:
+                - button [ref=e3606]:
+                  - img [ref=e3607]
+                - button [ref=e3609]:
+                  - img [ref=e3610]
+                - button [ref=e3614]:
+                  - img [ref=e3615]
+            - generic [ref=e3622] [cursor=pointer]:
+              - img [ref=e3623]
+              - generic [ref=e3626]: TreeProj FP7OCOJXJP4r
+              - generic [ref=e3627]:
+                - button [ref=e3628]:
+                  - img [ref=e3629]
+                - button [ref=e3631]:
+                  - img [ref=e3632]
+          - generic [ref=e3637] [cursor=pointer]:
+            - img [ref=e3639]
+            - generic [ref=e3644]: QA Tree Client vKOXkNZUJS
+            - generic [ref=e3645]:
+              - button [ref=e3646]:
+                - img [ref=e3647]
+              - button [ref=e3649]:
+                - img [ref=e3650]
+          - generic [ref=e3654]:
+            - generic [ref=e3655] [cursor=pointer]:
+              - img [ref=e3657]
+              - generic [ref=e3662]: QA Tree Client xgLSjnNBp0
+              - generic [ref=e3663]:
+                - button [ref=e3664]:
+                  - img [ref=e3665]
+                - button [ref=e3667]:
+                  - img [ref=e3668]
+                - button [ref=e3672]:
+                  - img [ref=e3673]
+            - generic [ref=e3680] [cursor=pointer]:
+              - img [ref=e3681]
+              - generic [ref=e3684]: TreeProj qy3KoEcTF6x0
+              - generic [ref=e3685]:
+                - button [ref=e3686]:
+                  - img [ref=e3687]
+                - button [ref=e3689]:
+                  - img [ref=e3690]
+          - generic [ref=e3694]:
+            - generic [ref=e3695] [cursor=pointer]:
+              - img [ref=e3697]
+              - generic [ref=e3702]: QA Tree Client zFKx7pCOkQ
+              - generic [ref=e3703]:
+                - button [ref=e3704]:
+                  - img [ref=e3705]
+                - button [ref=e3707]:
+                  - img [ref=e3708]
+                - button [ref=e3712]:
+                  - img [ref=e3713]
+            - generic [ref=e3720] [cursor=pointer]:
+              - img [ref=e3721]
+              - generic [ref=e3724]: TreeProj goT2T5oF2UPN
+              - generic [ref=e3725]:
+                - button [ref=e3726]:
+                  - img [ref=e3727]
+                - button [ref=e3729]:
+                  - img [ref=e3730]
+          - generic [ref=e3734]:
+            - generic [ref=e3735] [cursor=pointer]:
+              - img [ref=e3737]
+              - generic [ref=e3742]: Swiss Life
+              - generic [ref=e3743]:
+                - button [ref=e3744]:
+                  - img [ref=e3745]
+                - button [ref=e3747]:
+                  - img [ref=e3748]
+                - button [ref=e3752]:
+                  - img [ref=e3753]
+            - generic [ref=e3757]:
+              - generic [ref=e3760] [cursor=pointer]:
+                - img [ref=e3761]
+                - generic [ref=e3764]: New project
+                - generic [ref=e3765]:
+                  - button [ref=e3766]:
+                    - img [ref=e3767]
+                  - button [ref=e3769]:
+                    - img [ref=e3770]
+                  - button [ref=e3774]:
+                    - img [ref=e3775]
+              - generic [ref=e3778] [cursor=pointer]:
+                - generic [ref=e3780]: New deliverable
+                - button [ref=e3782]:
+                  - img [ref=e3783]
+          - generic [ref=e3788] [cursor=pointer]:
+            - img [ref=e3790]
+            - generic [ref=e3795]: TC020 Explore Client erfQ8dSX
+            - generic [ref=e3796]:
+              - button [ref=e3797]:
+                - img [ref=e3798]
+              - button [ref=e3800]:
+                - img [ref=e3801]
+          - generic [ref=e3806] [cursor=pointer]:
+            - img [ref=e3808]
+            - generic [ref=e3813]: TC021 Explore f8ewVSKE
+            - generic [ref=e3814]:
+              - button [ref=e3815]:
+                - img [ref=e3816]
+              - button [ref=e3818]:
+                - img [ref=e3819]
+          - generic [ref=e3823]:
+            - generic [ref=e3824] [cursor=pointer]:
+              - img [ref=e3826]
+              - generic [ref=e3831]: Test
+              - generic [ref=e3832]:
+                - button [ref=e3833]:
+                  - img [ref=e3834]
+                - button [ref=e3836]:
+                  - img [ref=e3837]
+                - button [ref=e3841]:
+                  - img [ref=e3842]
+            - generic [ref=e3846]:
+              - generic [ref=e3849] [cursor=pointer]:
+                - img [ref=e3850]
+                - generic [ref=e3853]: Test
+                - generic [ref=e3854]:
+                  - button [ref=e3855]:
+                    - img [ref=e3856]
+                  - button [ref=e3858]:
+                    - img [ref=e3859]
+                  - button [ref=e3863]:
+                    - img [ref=e3864]
+              - generic [ref=e3867] [cursor=pointer]:
+                - generic [ref=e3869]: Test
+                - button [ref=e3871]:
+                  - img [ref=e3872]
+          - generic [ref=e3877] [cursor=pointer]:
+            - img "Testing Automation Cigno" [ref=e3879]
+            - generic [ref=e3881]: Testing Automation Cigno
+            - generic [ref=e3882]:
+              - button [ref=e3883]:
+                - img [ref=e3884]
+              - button [ref=e3886]:
+                - img [ref=e3887]
+          - generic [ref=e3891]:
+            - generic [ref=e3892] [cursor=pointer]:
+              - img "UBS" [ref=e3894]
+              - generic [ref=e3896]: UBS
+              - generic [ref=e3897]:
+                - button [ref=e3898]:
+                  - img [ref=e3899]
+                - button [ref=e3901]:
+                  - img [ref=e3902]
+                - button [ref=e3906]:
+                  - img [ref=e3907]
+            - generic [ref=e3914] [cursor=pointer]:
+              - img [ref=e3915]
+              - generic [ref=e3918]: New project
+              - generic [ref=e3919]:
+                - button [ref=e3920]:
+                  - img [ref=e3921]
+                - button [ref=e3923]:
+                  - img [ref=e3924]
+          - generic [ref=e3928]:
+            - generic [ref=e3929] [cursor=pointer]:
+              - img [ref=e3931]
+              - generic [ref=e3936]: UBS Switzerland
+              - generic [ref=e3937]:
+                - button [ref=e3938]:
+                  - img [ref=e3939]
+                - button [ref=e3941]:
+                  - img [ref=e3942]
+                - button [ref=e3946]:
+                  - img [ref=e3947]
+            - generic [ref=e3950]:
+              - generic [ref=e3951]:
+                - generic [ref=e3954] [cursor=pointer]:
+                  - img [ref=e3955]
+                  - generic [ref=e3958]: Automation
+                  - generic [ref=e3959]:
+                    - button [ref=e3960]:
+                      - img [ref=e3961]
+                    - button [ref=e3963]:
+                      - img [ref=e3964]
+                    - button [ref=e3968]:
+                      - img [ref=e3969]
+                - generic [ref=e3972] [cursor=pointer]:
+                  - generic [ref=e3974]: Sales funnel improvement
+                  - button [ref=e3976]:
+                    - img [ref=e3977]
+              - generic [ref=e3981]:
+                - generic [ref=e3984] [cursor=pointer]:
+                  - img [ref=e3985]
+                  - generic [ref=e3988]: UBS PRoject
+                  - generic [ref=e3989]:
+                    - button [ref=e3990]:
+                      - img [ref=e3991]
+                    - button [ref=e3993]:
+                      - img [ref=e3994]
+                    - button [ref=e3998]:
+                      - img [ref=e3999]
+                - generic [ref=e4002] [cursor=pointer]:
+                  - generic [ref=e4004]: Ubs del
+                  - button [ref=e4006]:
+                    - img [ref=e4007]
+        - generic [ref=e4011]:
+          - generic [ref=e4012]:
+            - button "Collapse PRIVATE SESSION section" [expanded] [ref=e4013] [cursor=pointer]:
+              - generic [ref=e4014]: PRIVATE SESSION
+            - button "Collapse PRIVATE SESSION section (chevron)" [ref=e4016] [cursor=pointer]:
+              - img [ref=e4017]
+          - generic [ref=e4019]:
+            - generic [ref=e4020] [cursor=pointer]:
+              - generic [ref=e4022]: New work session
+              - button "Session actions" [ref=e4024]:
+                - img [ref=e4025]
+              - img [ref=e4030]
+            - generic [ref=e4033] [cursor=pointer]:
+              - generic [ref=e4035]: New work session
+              - button "Session actions" [ref=e4037]:
+                - img [ref=e4038]
+              - img [ref=e4043]
+            - generic [ref=e4046] [cursor=pointer]:
+              - generic [ref=e4048]: New work session
+              - button "Session actions" [ref=e4050]:
+                - img [ref=e4051]
+              - img [ref=e4056]
+            - generic [ref=e4059] [cursor=pointer]:
+              - generic [ref=e4061]: New work session
+              - button "Session actions" [ref=e4063]:
+                - img [ref=e4064]
+              - img [ref=e4069]
+            - generic [ref=e4072] [cursor=pointer]:
+              - generic [ref=e4074]: New work session
+              - button "Session actions" [ref=e4076]:
+                - img [ref=e4077]
+              - img [ref=e4082]
+      - button "Collapse menu" [ref=e4085] [cursor=pointer]:
+        - img [ref=e4086]
+      - separator [ref=e4088]
+      - generic [ref=e4092]:
+        - generic [ref=e4093]:
+          - img "Hassan Ahmad" [ref=e4095]
+          - generic [ref=e4096]:
+            - paragraph [ref=e4097]: Hassan Ahmad
+            - paragraph [ref=e4098]: qa.hassan12@gmail.com
+        - button "Logout" [ref=e4099] [cursor=pointer]:
+          - img [ref=e4100]
+    - generic [ref=e4103]:
+      - generic [ref=e4105]:
+        - generic [ref=e4107]:
+          - generic [ref=e4108]:
+            - generic [ref=e4109]: ...
+            - generic [ref=e4110]:
+              - generic [ref=e4111]: /
+              - link "New project" [ref=e4112] [cursor=pointer]:
+                - /url: /project/6a06abab670860b23258d2b1
+                - img [ref=e4113]
+                - generic [ref=e4115]: New project
+            - generic [ref=e4116]:
+              - generic [ref=e4117]: /
+              - button "sample deliverable" [ref=e4119]
+          - generic [ref=e4123]:
+            - button "1" [ref=e4125] [cursor=pointer]:
+              - img [ref=e4127]
+              - generic [ref=e4129]: "1"
+            - button "2" [ref=e4131] [cursor=pointer]:
+              - img [ref=e4133]
+              - generic [ref=e4135]: "2"
+            - generic [ref=e4137]:
+              - img [ref=e4139]
+              - generic [ref=e4141]: 3. Deliverable
+        - generic [ref=e4143]:
+          - generic [ref=e4147]:
+            - heading "sample deliverable" [level=2] [ref=e4148]
+            - paragraph [ref=e4149]: "Scope: Ai Strategy"
+          - generic [ref=e4152]:
+            - generic [ref=e4153]:
+              - generic [ref=e4156]:
+                - generic [ref=e4157]:
+                  - img [ref=e4158]
+                  - generic [ref=e4160]: "1"
+                - generic [ref=e4164]: Executive Summary
+              - button "2 Competition JPMorgan Chase and Bank of America lead with enterprise-scale AI deployment Institutions moved from experiments to production, gaining 15-30% efficiency despite cloud and data limits" [ref=e4166] [cursor=pointer]:
+                - generic [ref=e4167]:
+                  - generic [ref=e4168]: "2"
+                  - generic [ref=e4169]:
+                    - generic [ref=e4171]: Competition
+                    - heading "JPMorgan Chase and Bank of America lead with enterprise-scale AI deployment" [level=2] [ref=e4172]
+                    - paragraph [ref=e4173]: Institutions moved from experiments to production, gaining 15-30% efficiency despite cloud and data limits
+                - button "Expand section" [ref=e4175]:
+                  - img [ref=e4176]
+              - button "3 Use Case Prioritization AI-driven customer service automation delivers 30-50% cost reduction Banks deploying conversational AI handle 200+ million interactions annually with 95%+ resolution rates" [ref=e4179] [cursor=pointer]:
+                - generic [ref=e4180]:
+                  - generic [ref=e4181]: "3"
+                  - generic [ref=e4182]:
+                    - generic [ref=e4184]: Use Case Prioritization
+                    - heading "AI-driven customer service automation delivers 30-50% cost reduction" [level=2] [ref=e4185]
+                    - paragraph [ref=e4186]: Banks deploying conversational AI handle 200+ million interactions annually with 95%+ resolution rates
+                - button "Expand section" [ref=e4188]:
+                  - img [ref=e4189]
+              - button "4 Use Case Deep-dive AI-driven customer service automation reduces costs by up to 50% and boosts resolution rates Conversational AI automates 40%+ inquiries, handles 200M+ interactions yearly, and resolves 95%+ queries." [ref=e4192] [cursor=pointer]:
+                - generic [ref=e4193]:
+                  - generic [ref=e4194]: "4"
+                  - generic [ref=e4195]:
+                    - generic [ref=e4197]: Use Case Deep-dive
+                    - heading "AI-driven customer service automation reduces costs by up to 50% and boosts resolution rates" [level=2] [ref=e4198]
+                    - paragraph [ref=e4199]: Conversational AI automates 40%+ inquiries, handles 200M+ interactions yearly, and resolves 95%+ queries.
+                - button "Expand section" [ref=e4201]:
+                  - img [ref=e4202]
+              - button "5 Key Initiatives Foundations for AI-Driven Customer Service, Fraud Detection, and Underwriting Building core technology, data, and governance to unlock AI use cases and reduce costs" [ref=e4205] [cursor=pointer]:
+                - generic [ref=e4206]:
+                  - generic [ref=e4207]: "5"
+                  - generic [ref=e4208]:
+                    - generic [ref=e4210]: Key Initiatives
+                    - heading "Foundations for AI-Driven Customer Service, Fraud Detection, and Underwriting" [level=2] [ref=e4211]
+                    - paragraph [ref=e4212]: Building core technology, data, and governance to unlock AI use cases and reduce costs
+                - button "Expand section" [ref=e4214]:
+                  - img [ref=e4215]
+            - generic [ref=e4218]:
+              - button "Export" [ref=e4219] [cursor=pointer]
+              - button "Sanity Check" [ref=e4220] [cursor=pointer]:
+                - img [ref=e4221]
+                - text: Sanity Check
+              - button "Share" [disabled] [ref=e4224]
+      - generic [ref=e4225]:
+        - img [ref=e4227]
+        - generic [ref=e4230]:
+          - button "Expand Sources" [ref=e4231] [cursor=pointer]:
+            - img [ref=e4232]
+          - button "Expand Chat Assistant" [ref=e4236] [cursor=pointer]:
+            - img [ref=e4237]
+```
+
+# Test source
+
+```ts
+  1220 |   private async recoverAfterStickyNotesBuildRequestError(
+  1221 |     section: WorkplanSectionDefinition,
+  1222 |     noteText: string,
+  1223 |     verifyToken: string,
+  1224 |   ): Promise<Locator> {
+  1225 |     await this.restoreDeliverableStickyNotesContext(section);
+  1226 |     await this.tryWaitForSectionGeneratedContent(section, TC017_SOFT_SECTION_CONTENT_MS);
+  1227 | 
+  1228 |     const editor = await this.resolveStickyNotesEditor();
+  1229 |     await editor.scrollIntoViewIfNeeded();
+  1230 |     await this.typeIntoStickyNotesTextarea(editor, noteText.trim(), verifyToken.trim());
+  1231 |     await this.page.waitForTimeout(TC017_STICKY_NOTES_BEFORE_UPDATE_MS);
+  1232 | 
+  1233 |     await expect
+  1234 |       .poll(
+  1235 |         async () => {
+  1236 |           const btn = this.updateSectionButton();
+  1237 |           return (
+  1238 |             (await btn.isVisible().catch(() => false)) && (await btn.isEnabled().catch(() => false))
+  1239 |           );
+  1240 |         },
+  1241 |         {
+  1242 |           timeout: 60_000,
+  1243 |           intervals: [500, 1000, 2000, 3000],
+  1244 |           message: `Update section should enable for "${section.tabName}" after recovery`,
+  1245 |         },
+  1246 |       )
+  1247 |       .toBe(true);
+  1248 | 
+  1249 |     return editor;
+  1250 |   }
+  1251 | 
+  1252 |   private async waitForUpdateSectionClickOutcome(
+  1253 |     timeoutMs: number,
+  1254 |   ): Promise<'started' | 'error' | 'idle'> {
+  1255 |     const deadline = Date.now() + timeoutMs;
+  1256 |     while (Date.now() < deadline) {
+  1257 |       if (await this.isStickyNotesUpdateRequestErrorVisible()) {
+  1258 |         return 'error';
+  1259 |       }
+  1260 |       if (await this.isStickyNotesSectionUpdateStarted()) {
+  1261 |         return 'started';
+  1262 |       }
+  1263 |       await this.page.waitForTimeout(350);
+  1264 |     }
+  1265 |     if (await this.isStickyNotesUpdateRequestErrorVisible()) {
+  1266 |       return 'error';
+  1267 |     }
+  1268 |     if (await this.isStickyNotesSectionUpdateStarted()) {
+  1269 |       return 'started';
+  1270 |     }
+  1271 |     return 'idle';
+  1272 |   }
+  1273 | 
+  1274 |   private async clickUpdateSectionWithRetry(
+  1275 |     section: WorkplanSectionDefinition,
+  1276 |     editor: Locator,
+  1277 |     noteText: string,
+  1278 |     verifyToken: string,
+  1279 |     maxAttempts = 3,
+  1280 |   ): Promise<void> {
+  1281 |     await test.step(`Click Update section for "${section.tabName}" (retry if build-request error)`, async () => {
+  1282 |       let activeEditor = editor;
+  1283 | 
+  1284 |       for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+  1285 |         await this.expandStickyNotesPanelIfCollapsed();
+  1286 |         if (section.key === 'executive-summary') {
+  1287 |           await this.clickExecutiveSummaryExpandSectionIfCollapsed();
+  1288 |           if (attempt === 1) {
+  1289 |             await expect
+  1290 |               .poll(async () => this.stagePage.isDeliverableGenerationComplete(), {
+  1291 |                 timeout: 60_000,
+  1292 |                 intervals: [500, 1000, 2000, 3000, 5000],
+  1293 |                 message: 'Deliverable generation should be complete before Update section',
+  1294 |               })
+  1295 |               .toBe(true);
+  1296 |           }
+  1297 |           await this.page.waitForTimeout(attempt === 1 ? 1_000 : 500);
+  1298 |         } else {
+  1299 |           await this.ensureWorkplanSectionActive(section);
+  1300 |         }
+  1301 |         const activeTab = await this.getActiveWorkplanTabLabel();
+  1302 |         await this.testInfo.attach(`workplan-active-tab-before-update-${attempt}`, {
+  1303 |           body: JSON.stringify(
+  1304 |             { expected: section.tabName, activeTab: activeTab || '(unknown)' },
+  1305 |             null,
+  1306 |             2,
+  1307 |           ),
+  1308 |           contentType: 'application/json',
+  1309 |         });
+  1310 | 
+  1311 |         await expect
+  1312 |           .poll(async () => this.stagePage.isExportReady(), {
+  1313 |             timeout: 90_000,
+  1314 |             intervals: [500, 1000, 2000, 3000, 5000],
+  1315 |             message: 'Export should be enabled before Update section',
+  1316 |           })
+  1317 |           .toBe(true);
+  1318 | 
+  1319 |         const updateBtn = this.updateSectionButton();
+> 1320 |         await updateBtn.scrollIntoViewIfNeeded();
+       |                         ^ TimeoutError: locator.scrollIntoViewIfNeeded: Timeout 30000ms exceeded.
+  1321 |         await expect(updateBtn).toBeEnabled({ timeout: 45_000 });
+  1322 |         await activeEditor.blur().catch(() => undefined);
+  1323 |         await this.page.waitForTimeout(400);
+  1324 |         await updateBtn.click({ force: true });
+  1325 | 
+  1326 |         const outcome = await this.waitForUpdateSectionClickOutcome(25_000);
+  1327 | 
+  1328 |         if (outcome === 'started') {
+  1329 |           this.stickyNotesUpdateSucceeded = true;
+  1330 |           await this.testInfo.attach('sticky-notes-update-started', {
+  1331 |             body: JSON.stringify({ section: section.tabName, attempt, outcome }, null, 2),
+  1332 |             contentType: 'application/json',
+  1333 |           });
+  1334 |           return;
+  1335 |         }
+  1336 | 
+  1337 |         if (outcome === 'idle' && section.key === 'executive-summary') {
+  1338 |           await this.page.waitForTimeout(1_500);
+  1339 |           const updateBtnAfter = this.updateSectionButton();
+  1340 |           const loading =
+  1341 |             (await this.isExecutiveSummarySectionLoading(section)) ||
+  1342 |             (await this.isWorkplanSectionUpdateInProgress());
+  1343 |           const updateBusy =
+  1344 |             (await updateBtnAfter.isVisible().catch(() => false)) &&
+  1345 |             !(await updateBtnAfter.isEnabled().catch(() => true));
+  1346 |           if (loading || updateBusy) {
+  1347 |             this.stickyNotesUpdateSucceeded = true;
+  1348 |             await this.testInfo.attach('sticky-notes-update-started', {
+  1349 |               body: JSON.stringify(
+  1350 |                 { section: section.tabName, attempt, outcome: 'idle-treated-as-started', loading, updateBusy },
+  1351 |                 null,
+  1352 |                 2,
+  1353 |               ),
+  1354 |               contentType: 'application/json',
+  1355 |             });
+  1356 |             return;
+  1357 |           }
+  1358 |         }
+  1359 | 
+  1360 |         if (outcome === 'error') {
+  1361 |           await this.testInfo.attach(`sticky-notes-update-error-attempt-${attempt}`, {
+  1362 |             body:
+  1363 |               (await this.stickyNotesUpdateRequestError().innerText().catch(() => '')) ||
+  1364 |               'Could not build section update request for this section',
+  1365 |             contentType: 'text/plain',
+  1366 |           });
+  1367 |           await this.dismissStickyNotesUpdateError();
+  1368 |           await this.page.waitForTimeout(2_000);
+  1369 |           if (
+  1370 |             (await this.isExecutiveSummarySectionLoading(section)) ||
+  1371 |             (await this.isWorkplanSectionUpdateInProgress())
+  1372 |           ) {
+  1373 |             this.stickyNotesUpdateSucceeded = true;
+  1374 |             return;
+  1375 |           }
+  1376 |           if (attempt < maxAttempts && (await this.isStickyNotesAreaReady())) {
+  1377 |             await this.clickExecutiveSummaryExpandSectionIfCollapsed();
+  1378 |             const retryBtn = this.updateSectionButton();
+  1379 |             if (await retryBtn.isEnabled().catch(() => false)) {
+  1380 |               continue;
+  1381 |             }
+  1382 |           }
+  1383 |         }
+  1384 | 
+  1385 |         if (attempt < maxAttempts && outcome === 'error') {
+  1386 |           activeEditor = await this.recoverAfterStickyNotesBuildRequestError(
+  1387 |             section,
+  1388 |             noteText,
+  1389 |             verifyToken,
+  1390 |           );
+  1391 |           await this.page.waitForTimeout(1_500);
+  1392 |           continue;
+  1393 |         }
+  1394 | 
+  1395 |         if (attempt < maxAttempts && outcome === 'idle') {
+  1396 |           await this.page.waitForTimeout(2_000);
+  1397 |           continue;
+  1398 |         }
+  1399 |       }
+  1400 | 
+  1401 |       expect(
+  1402 |         await this.isStickyNotesUpdateRequestErrorVisible(),
+  1403 |         `"${section.tabName}": Update section should not show build-request error after retries`,
+  1404 |       ).toBe(false);
+  1405 |       expect(
+  1406 |         await this.isStickyNotesSectionUpdateStarted(),
+  1407 |         `"${section.tabName}": Update section should start section update or generation after retries`,
+  1408 |       ).toBe(true);
+  1409 |       this.stickyNotesUpdateSucceeded = true;
+  1410 |     });
+  1411 |   }
+  1412 | 
+  1413 |   /** Row that contains Export — Deliverable output (not Settings / sidebar). */
+  1414 |   private deliverableWorkplanRow(): Locator {
+  1415 |     return this.page
+  1416 |       .locator('div')
+  1417 |       .filter({ has: this.page.getByRole('button', { name: /^Export$/i }) })
+  1418 |       .last();
+  1419 |   }
+  1420 | 
+```

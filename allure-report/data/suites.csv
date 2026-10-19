@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","354034","Test case: 'TC-017'
+        Description: 'Search sample deliverable → Settings changes → Executive Summary Sticky notes (before/after) → verify prior stages → finish'
+        Tags: '@regression @deliverable @sync @slow'","Chromium","Fri May 22 17:18:50 PKT 2026","failed","Fri May 22 17:24:44 PKT 2026","Feature: Edits sync (TC-017)","dashboard\deliverable\deliverable-edits-sync.spec.ts","",""

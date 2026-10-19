@@ -1,0 +1,1 @@
+Brief did not surface the sync marker after regeneration; Settings/Deliverable are authoritative.

@@ -1,0 +1,227 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: dashboard\deliverable\deliverable-edits-sync.spec.ts >> Feature: Edits sync (TC-017) >> 
+        Test case: 'TC-017'
+        Description: 'New deliverable — Brief + Settings edits → Reset / Regenerate → return to prior views and verify sync'
+        Tags: '@regression @deliverable @sync @slow'
+      
+- Location: src\specs\dashboard\deliverable\deliverable-edits-sync.spec.ts:11:7
+
+# Error details
+
+```
+Error: locator.count: Target page, context or browser has been closed
+```
+
+# Test source
+
+```ts
+  843  |   }
+  844  | 
+  845  |   public async waitForDeliverableOutputAfterRegenerate(
+  846  |     timeoutMs = TC017_REGENERATE_TIMEOUT_MS,
+  847  |   ): Promise<void> {
+  848  |     await this.waitForFullRegenerationComplete(timeoutMs);
+  849  | 
+  850  |     await expect
+  851  |       .poll(
+  852  |         async () => {
+  853  |           if (!(await this.isOnDeliverableOutputStage())) {
+  854  |             await this.stagePage.navigateToDeliverableStageDirect();
+  855  |             await this.ensureDeliverableContentTab();
+  856  |           }
+  857  |           await this.expandStickyNotesPanelIfCollapsed();
+  858  |           return await this.isStickyNotesAreaReady();
+  859  |         },
+  860  |         {
+  861  |           timeout: TC017_STICKY_NOTES_ACTIVE_TIMEOUT_MS,
+  862  |           intervals: [1000, 2000, 3000, 5000, 10_000],
+  863  |           message:
+  864  |             'Sticky notes should be ready on 3. Deliverable after regeneration',
+  865  |         },
+  866  |       )
+  867  |       .toBe(true);
+  868  | 
+  869  |     const stickyNotesSeen = await this.isStickyNotesAreaReady();
+  870  |     await this.testInfo.attach('deliverable-output-after-regen', {
+  871  |       body: JSON.stringify(
+  872  |         {
+  873  |           stickyNotesSeen,
+  874  |           generationComplete: await this.stagePage.isDeliverableGenerationComplete(),
+  875  |           exportEnabled: await this.stagePage.exportButton().isEnabled().catch(() => false),
+  876  |         },
+  877  |         null,
+  878  |         2,
+  879  |       ),
+  880  |       contentType: 'application/json',
+  881  |     });
+  882  |   }
+  883  | 
+  884  |   private storylineNotesBanner(): Locator {
+  885  |     return this.page.getByText(/Update your Storyline with your notes/i).first();
+  886  |   }
+  887  | 
+  888  |   private stickyNotesHeading(): Locator {
+  889  |     return this.page.getByText(/^Sticky notes$/i).first();
+  890  |   }
+  891  | 
+  892  |   /** User XPath — sticky notes textarea. */
+  893  |   private static readonly STICKY_NOTES_TEXTAREA_XPATH =
+  894  |     "//textarea[contains(@placeholder, 'Explain the business context')]";
+  895  |   /** From "Sticky notes" label → next textarea (Deliverable output panel). */
+  896  |   private static readonly STICKY_NOTES_TEXTAREA_AFTER_LABEL_XPATH =
+  897  |     "//*[normalize-space()='Sticky notes']/following::textarea[contains(@placeholder,'Explain the business context')][1]";
+  898  | 
+  899  |   /**
+  900  |    * Deliverable canvas. App often has no `<main>` — do not use `main.last()` alone.
+  901  |    */
+  902  |   private deliverableStorylineRegion(): Locator {
+  903  |     return this.page
+  904  |       .locator('[role="main"]')
+  905  |       .last()
+  906  |       .or(this.page.locator('main').last())
+  907  |       .or(
+  908  |         this.page
+  909  |           .locator('div')
+  910  |           .filter({ has: this.page.getByRole('button', { name: /^Export$/i }) })
+  911  |           .last(),
+  912  |       );
+  913  |   }
+  914  | 
+  915  |   /**
+  916  |    * Deliverable **Content** storyline (excludes Settings workplan tabs and Brief composer).
+  917  |    */
+  918  |   private deliverableContentStoryline(): Locator {
+  919  |     const main = this.deliverableStorylineRegion();
+  920  |     return main
+  921  |       .filter({ has: this.page.getByText(/^Sticky notes$/i) })
+  922  |       .or(main.filter({ has: this.page.getByRole('button', { name: /^Update section$/i }) }))
+  923  |       .or(main.filter({ has: this.page.getByRole('button', { name: /^Export$/i }) }))
+  924  |       .first();
+  925  |   }
+  926  | 
+  927  |   /** Resolve the visible sticky-notes textarea (tries label-adjacent xpath, then flex-1, then page). */
+  928  |   private async findStickyNotesTextarea(): Promise<Locator | null> {
+  929  |     const candidates = [
+  930  |       this.page.locator(
+  931  |         `xpath=${DeliverableEditsSyncPage.STICKY_NOTES_TEXTAREA_AFTER_LABEL_XPATH}`,
+  932  |       ),
+  933  |       this.page.locator(
+  934  |         "xpath=//div[contains(@class, 'flex-1')]//textarea[contains(@placeholder, 'Explain the business context')]",
+  935  |       ),
+  936  |       this.page.locator(`xpath=${DeliverableEditsSyncPage.STICKY_NOTES_TEXTAREA_XPATH}`),
+  937  |     ];
+  938  | 
+  939  |     let best: Locator | null = null;
+  940  |     let bestArea = 0;
+  941  | 
+  942  |     for (const group of candidates) {
+> 943  |       const count = await group.count();
+       |                                 ^ Error: locator.count: Target page, context or browser has been closed
+  944  |       for (let i = 0; i < count; i += 1) {
+  945  |         const field = group.nth(i);
+  946  |         if (!(await field.isVisible().catch(() => false))) {
+  947  |           continue;
+  948  |         }
+  949  |         if (await field.isDisabled().catch(() => false)) {
+  950  |           continue;
+  951  |         }
+  952  |         const box = await field.boundingBox().catch(() => null);
+  953  |         const area = box ? box.width * box.height : 0;
+  954  |         if (area > bestArea) {
+  955  |           bestArea = area;
+  956  |           best = field;
+  957  |         }
+  958  |       }
+  959  |       if (best && bestArea > 3_000) {
+  960  |         return best;
+  961  |       }
+  962  |     }
+  963  |     return best;
+  964  |   }
+  965  | 
+  966  |   /** Sticky notes + Update section live in the same deliverable output panel. */
+  967  |   private stickyNotesPanel(): Locator {
+  968  |     return this.page
+  969  |       .locator('div')
+  970  |       .filter({ has: this.page.getByText(/^Sticky notes$/i) })
+  971  |       .filter({ has: this.page.getByRole('button', { name: /^Update section$/i }) })
+  972  |       .last();
+  973  |   }
+  974  | 
+  975  |   private updateSectionButton(): Locator {
+  976  |     return this.stickyNotesPanel().getByRole('button', { name: /^Update section$/i }).first();
+  977  |   }
+  978  | 
+  979  |   /** Stay on **3. Deliverable → Content** with Executive Summary + Sticky notes visible. */
+  980  |   private async ensureOnDeliverableContentForStickyNotes(
+  981  |     section: WorkplanSectionDefinition,
+  982  |   ): Promise<void> {
+  983  |     await this.deliverablePage.dismissBlockingDeliverablePanels();
+  984  | 
+  985  |     const exportVisible = await this.page
+  986  |       .getByRole('button', { name: /^Export$/i })
+  987  |       .isVisible()
+  988  |       .catch(() => false);
+  989  |     if (!exportVisible) {
+  990  |       if (this.deliverableName) {
+  991  |         await this.stagePage
+  992  |           .navigateToStage('Deliverable', {
+  993  |             deliverableName: this.deliverableName,
+  994  |             stageSettleMs: 0,
+  995  |           })
+  996  |           .catch(() => undefined);
+  997  |       } else {
+  998  |         await this.stagePage.navigateToDeliverableStageDirect();
+  999  |       }
+  1000 |     }
+  1001 | 
+  1002 |     await this.ensureDeliverableContentTab();
+  1003 |     if (section.key === 'executive-summary') {
+  1004 |       await this.clickExecutiveSummaryExpandSectionIfCollapsed();
+  1005 |     }
+  1006 |     await this.expandStickyNotesPanelIfCollapsed();
+  1007 |   }
+  1008 | 
+  1009 |   /** First visible, enabled Update section in Deliverable output (avoids .or() scroll timeouts). */
+  1010 |   private async resolveVisibleUpdateSectionButton(): Promise<Locator | null> {
+  1011 |     const scopes = [
+  1012 |       this.stickyNotesPanel(),
+  1013 |       this.deliverableWorkplanRow(),
+  1014 |       this.deliverableContentStoryline(),
+  1015 |       this.deliverableStorylineRegion(),
+  1016 |     ];
+  1017 | 
+  1018 |     for (const scope of scopes) {
+  1019 |       const buttons = scope.getByRole('button', { name: /^Update section$/i });
+  1020 |       const count = await buttons.count();
+  1021 |       for (let i = 0; i < count; i += 1) {
+  1022 |         const btn = buttons.nth(i);
+  1023 |         if (
+  1024 |           (await btn.isVisible().catch(() => false)) &&
+  1025 |           (await btn.isEnabled().catch(() => false))
+  1026 |         ) {
+  1027 |           return btn;
+  1028 |         }
+  1029 |       }
+  1030 |     }
+  1031 | 
+  1032 |     const pageButtons = this.page.getByRole('button', { name: /^Update section$/i });
+  1033 |     const pageCount = await pageButtons.count();
+  1034 |     for (let i = pageCount - 1; i >= 0; i -= 1) {
+  1035 |       const btn = pageButtons.nth(i);
+  1036 |       if (
+  1037 |         (await btn.isVisible().catch(() => false)) &&
+  1038 |         (await btn.isEnabled().catch(() => false))
+  1039 |       ) {
+  1040 |         return btn;
+  1041 |       }
+  1042 |     }
+  1043 | 
+```

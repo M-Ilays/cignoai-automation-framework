@@ -1,13 +1,13 @@
 node_modules
 .DS_Store
 .playwright-mcp/
-allure-report/
-allure-results/
-playwright-report/
-test-results/
 *.log
 .env
 .env.*
 !.env.example
 cookies/
 **/cookies/
+
+# Report archives above GitHub's regular file-size limit
+allure-results/b280ed69-0ebc-4ea1-ac5d-abff0650be19-attachment.zip
+allure-results/27390a33-9d4f-463a-bd96-2f0b9911fdee-attachment.zip

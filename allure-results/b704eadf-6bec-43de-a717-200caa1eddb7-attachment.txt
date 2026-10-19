@@ -1,0 +1,11 @@
+Update section should be visible and enabled beside Sticky notes
+
+Update section should be visible and enabled beside Sticky notes
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32mtrue[39m
+Received: [31mfalse[39m
+
+Call Log:
+- Timeout 45000ms exceeded while waiting on the predicate
