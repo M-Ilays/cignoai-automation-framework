@@ -1,0 +1,13 @@
+node_modules
+.DS_Store
+.playwright-mcp/
+allure-report/
+allure-results/
+playwright-report/
+test-results/
+*.log
+.env
+.env.*
+!.env.example
+cookies/
+**/cookies/
