@@ -1,0 +1,19 @@
+AI Consulting Market Entry - Input Brief
+========================================
+
+Target market
+  United States enterprise buyers (financial services, healthcare, manufacturing)
+
+Competitive landscape
+  Big Four advisory practices and boutique AI consultancies
+
+Offering scope
+  AI consulting services: strategy, implementation, change management
+
+Constraints
+  Cloud-first delivery; partner-led go-to-market; FY2026 launch window
+
+Success metrics
+  Qualified pipeline, win rate, time-to-first-deal, customer acquisition cost
+
+This file mirrors the PDF upload fixture used by TC-010 (deliverable settings).

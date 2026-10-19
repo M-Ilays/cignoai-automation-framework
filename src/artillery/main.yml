@@ -1,0 +1,15 @@
+config:
+  target: "https://selectorshub.com/xpath-practice-page/"
+  phases:
+    - duration: 1
+      arrivalRate: 1
+      name: "Login"
+  processor: "./main.js"
+  engines:
+    playwright:
+      browser: "chromium"
+scenarios:
+  - engine: playwright
+    testFunction: 'login'
+    script: './main.js'
+    

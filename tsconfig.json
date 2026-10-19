@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "CommonJS",
+      "moduleResolution": "node",
+      "outDir": "out",
+      "sourceMap": true,
+      "types": ["node"],
+      "typeRoots": ["./node_modules/@types"],
+      "baseUrl": ".",
+      "paths": {
+        "@page/*": ["src/page/*"],
+        "@fixtures/*": ["src/fixtures/*"],
+        "@utilities/*": ["src/utilities/*"],
+        "@data/*": ["src/data/*"],
+        "@interface/*": ["src/interface/*"],
+        "@interfaces/*": ["src/interface/*"],
+        "@artillery/*": ["src/artillery/*"]
+      },
+      "strict": false,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
+      "noUnusedLocals": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true
+    },
+    "include": ["src/**/*", "playwright.config.ts", "playwright.global-setup.ts", "playwright.default-session.ts"]
+  }
+  

@@ -1,76 +1,101 @@
-# Cigno FE QA Automation Framework
+# Playwright Automation Framework
 
-This repository contains the Cigno front-end quality-assurance automation workspace. It is used to support browser-based testing and includes Playwright-related execution artifacts, test data, environment configuration, and generated Allure reports.
+## Introduction
 
-## Repository layout
+This README provides an overview and detailed explanation of the Playwright Automation Framework. It covers the directory structure, key components of the framework, and provides a detailed walkthrough of the login test case as an example. The purpose of this README is to help new developers understand the framework's architecture and workflow.
 
-| Path | Purpose |
-| --- | --- |
-| `src/config/` | Local environment configuration. Keep secrets in `.env` files and never commit them. |
-| `src/data/test-data/` | Test data used by the automation flows. |
-| `src/cookies/` | Local browser session data. This directory is ignored by Git. |
-| `allure-report/` | Generated Allure report output. |
-| `playwright-report/` | Generated Playwright report output. |
-| `test-results/` | Test execution results and attachments. |
-| `.playwright-mcp/` | Browser exploration and Playwright MCP artifacts. |
+## Dependencies Used
 
-Generated reports, browser sessions, logs, local environment files, and test results are excluded through [`.gitignore`](./.gitignore).
+- **Playwright**: A Node.js library to automate Chromium, Firefox, and WebKit with a single API.
+- **Casual**: A library for generating fake data.
+- **fs**: File system module for file handling.
 
-## Requirements
+## Prerequisites
 
-- Node.js and npm
-- Access to the Cigno application environment under test
-- Valid test credentials and environment settings supplied through a local `.env` file
+### Node.js
 
-## Configuration
+1. Install [Node.js](https://nodejs.org/en/) (LTS version recommended).
+2. During installation, ensure you check the option:  
+   - [x] **Automatically install the necessary tools. Note that this will also install Chocolatey. The script will pop up in a new window after the installation completes.**
 
-Create or update the local environment file under `src/config/` with the values required by your test environment. Do not commit credentials, tokens, or other sensitive values.
+### Browsers
 
-Use an example environment file for sharing configuration names and documentation without sharing secrets:
+- Ensure the following browsers are installed:
+  - Chrome
+  - Firefox
+  - Microsoft Edge
 
-```text
-src/config/.env.example
+### Visual Studio Code
+
+- Install [Visual Studio Code](https://code.visualstudio.com/download).
+
+## Project Setup
+
+### Option 1: Manual Download
+
+1. **Download Project**:  
+   - Click the **Code** button in this repository.
+   - Select the **Download ZIP** option.
+   - Extract the ZIP file.
+   - Place the project folder in your desired location.
+
+2. **Open Project**:  
+   - Right-click on the folder and open it with Visual Studio Code.
+   - Alternatively, open Visual Studio Code and drag the folder into the VS Code window.
+   - Or, use `Ctrl+K Ctrl+O` to open the folder directly.
+
+### Option 2: Cloning via GitBash
+
+1. Navigate to the directory where you want to clone the project.
+2. Open GitBash and execute the following command:
+
+    ```bash
+    git clone <repository-url>
+    ```
+
+## Running the Project
+
+1. Open a new terminal in Visual Studio Code using `` Ctrl+Shift+` `` or go to the top bar, click **Terminal** > **New Terminal**.
+2. Install the necessary packages:
+
+    ```bash
+    npm install
+    npx playwright install
+    ```
+
+### Running Test Cases
+
+#### Run All Test Cases with Allure Reporting
+
+```bash
+npm run test:dev:allure:open
 ```
 
-## Running tests
+## Run Specific Test Cases by Tag
 
-Install the project dependencies and run the test command defined by the project manifest:
-
-```powershell
-npm install
-npm test
+```bash
+npx playwright test src/specs/login.spec.ts --grep "@regression"
 ```
 
-If Playwright browsers are not installed locally, install them with:
+## Viewing Playwright Reports
 
-```powershell
-npx playwright install
-```
-
-The exact test scripts and test selection should be maintained in the project `package.json`.
-
-## Reports
-
-After a test run, generated reports can be opened with the relevant project command. For example:
-
-```powershell
+```bash
 npx playwright show-report
 ```
 
-Allure reports can be served with the Allure CLI when Allure results are available:
 
-```powershell
-allure serve allure-results
-```
+## DOs and DON'Ts
 
-## Git workflow
+### DOs
 
-Work from the `public-main` branch unless another branch is specifically required. Before pushing changes:
+1. **Keep Code Clean**: Run `npm run pretest` before committing to maintain code quality.
+2. **Run Tests**: Use `npm run test:dev` for development tests and `npm run test:dev:allure` for detailed reports.
 
-```powershell
-git status
-git pull --rebase
-git push
-```
+### DON'Ts
 
-Review generated files and local configuration before committing to ensure that secrets and machine-specific artifacts are not included.
+1. **Ignore Linting Errors**: Always fix errors before committing.
+2. **Skip Pretest Step**: Ensure your code adheres to standards by running pretest.
+
+## Conclusion
+
+By following these guidelines and using this document as a reference, you can effectively work within the Playwright Automation Framework. Happy testing!
